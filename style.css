@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono.otf') format('otf');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +11,7 @@ body {
 }
 
 .text {
-    font-family: "Victor Mono", monospace;
+    font-family: 'Victor Mono', monospace;
     font-style: italic;
     text-align: center;
     font-size: 4rem;
