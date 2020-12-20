@@ -26,9 +26,3 @@ const tl = gsap.timeline( {
     tl.fromTo('.text', {opacity: 0, }, {opacity: 1, duration: 2 }, '-=1');
 
     }
-
-//Can you do something about it?
-
-
-
-//Then why worry?
