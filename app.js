@@ -1,28 +1,20 @@
-const tl = gsap.timeline( { 
-    defaults: { ease: 'power1.out' } 
-  } );
-//Do you have a problem?
-  if (!sessionStorage.getItem('hasVisited')) {
-    tl.to('.landing-page', { y: '0%', duration: 0 });
-    tl.to('.the-fade', { y: '0%', duration: 0, delay: 3 });
-    tl.fromTo('.hello', {opacity: 0, }, {opacity: 1, duration: 3, delay: 1}, {opacity: 0, duration: 3});
-    tl.fromTo('.nice-to-see-you', {opacity: 0, }, {opacity: 1, duration: 3, delay: 3 }, {opacity: 0, duration: 3, delay: 3 });
-    tl.fromTo('.landing-page', {opacity: 1, }, {opacity: 0, duration: 3});
-    tl.fromTo('.the-fade', {opacity: 0, }, {opacity: 1, duration: 3}, '-=1');
-    tl.fromTo('.follow-up-question', {opacity: 0, }, {opacity: 1, duration: 2 }, '-=2');
-    tl.fromTo('.real-question', {opacity: 0, }, {opacity: 1, duration: 2 },'-=2');
-    tl.fromTo('.text', {opacity: 0, }, {opacity: 1, duration: 3}, '-=2');
-    tl.to('.landing-page', { y: '100%', duration: 0 });
-
-    sessionStorage.setItem('hasVisited', true);
-  } else {
-    tl.to('.the-fade', { y: '0%', duration: 0 });
-    tl.fromTo('.hello text', {opacity: 0, }, {opacity: 0, duration: 0 });
-    tl.fromTo('.nice-to-see-you text', {opacity: 0, }, {opacity: 0, duration: 0 });
-    tl.fromTo('.landing-page', {opacity: 0, }, {opacity: 0, duration: 0 });
-    tl.fromTo('.the-fade', {opacity: 0, }, {opacity: 1, duration: 2 });
-    tl.fromTo('.follow-up-question', {opacity: 0, }, {opacity: 1, duration: 2 },'-=2');
-    tl.fromTo('.real-question', {opacity: 0, }, {opacity: 1, duration: 2 },'-=2');
-    tl.fromTo('.text', {opacity: 0, }, {opacity: 1, duration: 2 }, '-=1');
-
+function openCampaign(evt, campaignName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(campaignName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
