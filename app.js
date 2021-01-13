@@ -1,6 +1,6 @@
 function openCampaign(evt, campaignName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
+    // Declare all letiables
+    let i, tabcontent, tablinks;
   
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -18,3 +18,19 @@ function openCampaign(evt, campaignName) {
     document.getElementById(campaignName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+function findUPH () {
+
+  let units = document.getElementById("units");
+  let hours = document.getElementById("hours");
+  let uph = document.getElementById("uph");
+
+  uph.value = units.value/hours.value
+
+  
+
+
+
+
+
+}
