@@ -95,7 +95,6 @@
 #commission-calc {
     position: relative;
     width:40%;
-    margin: 2em 1.5em 0em 1.5em; 
 }
 
 #commission-calc h2 {
@@ -131,7 +130,7 @@ input:focus {
 label          {
     color:#999; 
     text-align: center;
-    font-size:1.2rem;
+    font-size:1rem;
     font-weight:normal;
     position:absolute;
     padding: .5em 0em 0em 0em;
@@ -146,7 +145,8 @@ label          {
 input:focus ~ label, 
 input:valid ~ label {
     top:-15px;
-    font-size:14px;
+    font-size:.8rem;
+    font-weight: 600;
     color: #01579b;
 }
   
@@ -220,18 +220,18 @@ input:focus ~ .highlight {
     to  { width:0; background:transparent; }
 }
 
-button {
-    text-align: center;
-}
+
 .pure-material-button-contained {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
-    padding: 0 16px;
+    padding: 0 1em;
     min-width: 64px;
     height: 36px;
+    left: 50%;
+    transform: translatex(-50%);
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
