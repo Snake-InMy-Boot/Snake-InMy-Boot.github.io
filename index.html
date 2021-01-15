@@ -22,106 +22,117 @@
   <div id="Select" class="tabcontent" style="display: block">
     <div class="content-container">
       <div class="card">
+        <div class="row">
+        <div class="button r" id="button-1">
+          <input type="checkbox" id="checkbox1" class="checkbox">
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+        <div class="button r" id="button-2">
+          <input type="checkbox" id="checkbox2" class="checkbox">
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+        </div>
         <div class="week-container">
-          
-          <form id="commission-calc">
+          <form class="commission-calc">
             <h2>Week 1</h2>
             <div class="form-input">      
-              <input type="text" id="sales" name="sales" required>
+              <input type="text" id="units1" name="units1" required>
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label class="bold-label">Sales *</label>
+              <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="sales" name="sales" required>
+              <input type="text" id="hours1" name="hours1" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="uph1" name="uph1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>UPH</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="hourlyRate1" name="hourlyRate1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Hourly Rate</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="dialPay1" name="dialPay1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Dial Pay</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="attendanceBonus1" name="attendanceBonus1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Atten. Bonus</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="commission1" name="commission1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Commission</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="total1" name="total1" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Total</label>
             </div>
           </form>
 
-          <form id="commission-calc">
+          <form class="commission-calc">
             <h2>Week 2</h2>
             <div class="form-input">      
-              <input type="text" id="sales" name="sales" required>
+              <input type="text" id="units2" name="units2" required>
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label class="bold-label">Sales *</label>
+              <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="sales" name="sales" required>
+              <input type="text" id="hours2" name="hours2" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="uph2" name="uph2" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>UPH</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="hourlyRate2" name="hourlyRate2" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Hourly Rate</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="dialPay2" name="dialPay2"readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Dial Pay</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="attendanceBonus2" name="attendanceBonus2"readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Atten. Bonus</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="commission2" name="commission2" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Commission</label>
             </div>
             <div class="form-input">      
-              <input type="text" readonly>
+              <input type="text" id="total2" name="total2" readonly>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Total</label>
@@ -129,12 +140,17 @@
           </form>
         </div>
 
-        <button class="pure-material-button-contained">Calculate</button>
+        <button class="pure-material-button-contained" id="calculate" onclick="findUPH()">Calculate</button>
           
       </div>
     <div class="card">
       <div class="commission-table">
 
+
+
+
+
+        
       </div>
     </div>
   </div>
@@ -151,4 +167,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
