@@ -275,9 +275,8 @@ input {
     background-color: inherit;
     text-align: center;
     position: relative;
-    font-size:1.8rem;
+    font-size:1.5rem;
     display:block;
-    padding: 0em 0em .2em 0em;
     width: 100%;
     border:none;
     border-bottom:1px solid #757575;
@@ -298,7 +297,7 @@ label          {
     position:absolute;
     padding: .5em 0em 0em 0em;
     pointer-events:none;
-    top:10px;
+    top:5px;
     transition:0.2s ease all; 
     -moz-transition:0.2s ease all; 
     -webkit-transition:0.2s ease all;
@@ -308,7 +307,7 @@ label          {
 input:focus ~ label, 
 input:valid ~ label {
     top:-15px;
-    font-size:.8rem;
+    font-size:0.8rem;
     font-weight: 600;
     color: #01579b;
 }
@@ -349,8 +348,8 @@ input:focus ~ .bar:after {
 /* HIGHLIGHTER ================================== */
 .highlight {
     position: absolute;
-    top: 35%; 
-    height: 65%; 
+    top: 0%; 
+    height: 100%; 
     width: 100%; 
     pointer-events: none;
     opacity: 0.35;

@@ -38,13 +38,13 @@
           <form class="commission-calc">
             <h2>Week 1</h2>
             <div class="form-input">      
-              <input type="text" id="units1" name="units1" required>
+              <input type="text" id="units1" name="units1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hours1" name="hours1" required>
+              <input type="text" id="hours1" name="hours1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
@@ -90,13 +90,13 @@
           <form class="commission-calc">
             <h2>Week 2</h2>
             <div class="form-input">      
-              <input type="text" id="units2" name="units2" required>
+              <input type="text" id="units2" name="units2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hours2" name="hours2" required>
+              <input type="text" id="hours2" name="hours2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
@@ -138,9 +138,18 @@
               <label>Total</label>
             </div>
           </form>
+          
+        <div class="form-input">      
+          <input type="text" id="payPeriod" name="payPeriod" readonly>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Pay Period Total</label>
         </div>
 
-        <button class="pure-material-button-contained" id="calculate" onclick="findUPH()">Calculate</button>
+        </div>
+
+        <button class="pure-material-button-contained" id="calculate" onclick="findSelectUPH()">Submit</button>
+        <button class="pure-material-button-contained" id="calculate" onclick="window.location.reload();">Reset</button>
           
       </div>
     <div class="card">
