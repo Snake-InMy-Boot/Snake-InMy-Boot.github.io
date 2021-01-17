@@ -286,7 +286,7 @@ input {
     background-color: inherit;
     text-align: center;
     position: relative;
-    font-size:1.5rem;
+    font-size:1.2rem;
     display:block;
     width: 100%;
     border:none;
@@ -308,7 +308,7 @@ label          {
     position:absolute;
     padding: .5em 0em 0em 0em;
     pointer-events:none;
-    top:5px;
+    top:0px;
     transition:0.2s ease all; 
     -moz-transition:0.2s ease all; 
     -webkit-transition:0.2s ease all;
@@ -317,8 +317,9 @@ label          {
 /* active state */
 input:focus ~ label, 
 input:valid ~ label {
-    top:-15px;
-    font-size:0.75rem;
+    top:-16px;
+    font-size:0.3rem;
+    font-weight: 600;
     color: #01579b;
 }
   
@@ -584,6 +585,10 @@ table tr:nth-child(2) td:last-child {
 
     .form-input { 
         margin: 2.5vh;
+    }
+
+    input {
+        font-size: 1.50rem;
     }
 
     .pure-material-button-contained {
