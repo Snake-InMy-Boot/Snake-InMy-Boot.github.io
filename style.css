@@ -403,9 +403,9 @@ input:focus ~ .highlight {
     padding: 0 1em;
     min-width: 75px;
     height: 36px;
-    left: 40%;
+    left: 35%;
     bottom: 5%;
-    transform: translatex(-40%);
+    transform: translatex(-35%);
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
@@ -582,6 +582,14 @@ table tr:nth-child(2) td:last-child {
         height: 2em;
         font-size: 2rem;
     }
+
+    .form-input { 
+        margin: 2.5vh;
+    }
+
+    .pure-material-button-contained {
+        left: 45%;
+        transform: translatex(-45%);
 
     th {
         font-size: 1.8rem;
