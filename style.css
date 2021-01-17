@@ -75,7 +75,7 @@
 
 .card {
     flex: 1 0 325px;
-    margin: 1em 1em;
+    margin: 0em 1em 2em 1em;
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -255,11 +255,13 @@
 
 
 .week-container {
+    height: 90%;
+    width:100%;
     padding: 4em 0em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width:100%;
+    
     color: #01579b;
     
 }
@@ -276,7 +278,7 @@
 
 .form-input { 
     position:relative; 
-    margin: 2em;
+    margin: 1.35vh;
 }
 
 
@@ -315,7 +317,7 @@ label          {
 /* active state */
 input:focus ~ label, 
 input:valid ~ label {
-    top:-20px;
+    top:-15px;
     font-size:0.75rem;
     font-weight: 600;
     color: #01579b;
@@ -402,6 +404,7 @@ input:focus ~ .highlight {
     min-width: 75px;
     height: 36px;
     left: 40%;
+    bottom: 5%;
     transform: translatex(-40%);
     vertical-align: middle;
     text-align: center;
@@ -497,6 +500,54 @@ input:focus ~ .highlight {
     opacity: 0;
 }
 
+.commission-table {
+    height: 95%;
+    width: 90%;
+    padding-bottom: 2em;
+
+}
+
+
+
+table {
+    table-layout: fixed;
+    position: relative;
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+    left: 5%;
+    text-align: center;
+}
+
+th {
+    font-size: 0.5rem;
+    padding: 2.5em .25em 0em .25em;
+}
+
+tr:nth-child(even) {
+    background-color: #01589b25;
+}
+
+td {
+    padding: 1em 0.25em;
+    font-size: 0.4rem;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+table tr:nth-child(2) td:first-child {
+    border-top-left-radius: 10px;
+}
+
+table tr:nth-child(2) td:last-child {
+    border-top-right-radius: 10px;
+}
 
 
 
@@ -531,7 +582,20 @@ input:focus ~ .highlight {
         height: 2em;
         font-size: 2rem;
     }
+
+    th {
+        font-size: 1.8rem;
+        vertical-align: bottom;
+        padding: 1.5em .25em 0em .25em;
+    }
+
+    td {
+        padding: 1em 0.25em;
+        font-size: 1.5rem;
+    }
 }
+
+
 
 #Retention {
     padding: 150px 0;
