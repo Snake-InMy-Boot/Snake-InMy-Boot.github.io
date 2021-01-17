@@ -319,7 +319,6 @@ input:focus ~ label,
 input:valid ~ label {
     top:-15px;
     font-size:0.75rem;
-    font-weight: 600;
     color: #01579b;
 }
   
@@ -590,6 +589,7 @@ table tr:nth-child(2) td:last-child {
     .pure-material-button-contained {
         left: 45%;
         transform: translatex(-45%);
+    }
 
     th {
         font-size: 1.8rem;
