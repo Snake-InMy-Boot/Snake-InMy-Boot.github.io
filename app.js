@@ -1,27 +1,27 @@
 function openCampaign(evt, campaignName) {
-    // Declare all letiables
-    let i, tabcontent, tablinks;
+  // Declare all letiables
+  let i, tabcontent, tablinks;
   
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-  
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-  
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(campaignName).style.display = "block";
-    evt.currentTarget.className += " active";
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-
+  
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(campaignName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
 function findSelectUPH () {
   // Calculates the agents rates for week 1
+
   let units1 = document.getElementById("units1");
   let hours1 = document.getElementById("hours1");
   let uph1 = document.getElementById("uph1");
@@ -40,7 +40,7 @@ function findSelectUPH () {
     currency: 'USD',
     minimumFractionDigits: 2
   });
-
+  
   if (units1.value != 0 && hours1.value != 0) {
     uph1.value = (units1.value/hours1.value).toFixed(2)
     dialPay1.value = (hours1.value * 10).toFixed(2)
@@ -127,6 +127,7 @@ function findSelectUPH () {
   let scheduled2 = null;
   let payPeriod = document.getElementById("payPeriod");
 
+
   if (units2.value != 0 && hours2.value != 0) {
     uph2.value = (units2.value/hours2.value).toFixed(2)
     dialPay2.value = (hours2.value * 10).toFixed(2)
@@ -195,12 +196,10 @@ function findSelectUPH () {
     commission2.value = 0,
     hourlyRate2.value = 10;
     }
-    console.log(commission2.value)
 
     attendanceBonus2.value = (attendanceBonus2.value * hours2.value).toFixed(2)
     commission2.value = (commission2.value * hours2.value).toFixed(2)
     total2.value = parseFloat(dialPay2.value) + parseFloat(attendanceBonus2.value) + parseFloat(commission2.value)
-
   }
 
   payPeriod.value = parseFloat(total1.value) + parseFloat(total2.value)
@@ -218,3 +217,4 @@ function findSelectUPH () {
   total2.value = formatter.format(total2.value)
   payPeriod.value = formatter.format(payPeriod.value)
 }
+

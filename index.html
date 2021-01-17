@@ -23,116 +23,116 @@
     <div class="content-container">
       <div class="card">
         <div class="row">
-        <div class="button r" id="button-1">
-          <input type="checkbox" id="checkbox1" class="checkbox">
-          <div class="knobs"></div>
-          <div class="layer"></div>
-        </div>
-        <div class="button r" id="button-2">
-          <input type="checkbox" id="checkbox2" class="checkbox">
-          <div class="knobs"></div>
-          <div class="layer"></div>
-        </div>
+          <div class="button r" id="button-1">
+            <input type="checkbox" id="checkbox1" class="checkbox">
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+          <div class="button r" id="button-2">
+            <input type="checkbox" id="checkbox2" class="checkbox">
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
         </div>
         <div class="week-container">
-          <form class="commission-calc">
+          <form name="week1" class="commission-calc">
             <h2>Week 1</h2>
             <div class="form-input">      
-              <input type="text" id="units1" name="units1" autocomplete="off" required>
+              <input type="number" id="units1" name="units1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hours1" name="hours1" autocomplete="off" required>
+              <input type="number" id="hours1" name="hours1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="uph1" name="uph1" readonly>
+              <input type="text" id="uph1" name="uph1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>UPH</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hourlyRate1" name="hourlyRate1" readonly>
+              <input type="text" id="hourlyRate1" name="hourlyRate1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Hourly Rate</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="dialPay1" name="dialPay1" readonly>
+              <input type="text" id="dialPay1" name="dialPay1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Dial Pay</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="attendanceBonus1" name="attendanceBonus1" readonly>
+              <input type="text" id="attendanceBonus1" name="attendanceBonus1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Atten. Bonus</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="commission1" name="commission1" readonly>
+              <input type="text" id="commission1" name="commission1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Commission</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="total1" name="total1" readonly>
+              <input type="text" id="total1" name="total1" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Total</label>
             </div>
           </form>
 
-          <form class="commission-calc">
+          <form name="week2" class="commission-calc">
             <h2>Week 2</h2>
             <div class="form-input">      
-              <input type="text" id="units2" name="units2" autocomplete="off" required>
+              <input type="number" id="units2" name="units2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Units *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hours2" name="hours2" autocomplete="off" required>
+              <input type="number" id="hours2" name="hours2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label class="bold-label">Hours *</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="uph2" name="uph2" readonly>
+              <input type="text" id="uph2" name="uph2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>UPH</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="hourlyRate2" name="hourlyRate2" readonly>
+              <input type="text" id="hourlyRate2" name="hourlyRate2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Hourly Rate</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="dialPay2" name="dialPay2"readonly>
+              <input type="text" id="dialPay2" name="dialPay2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Dial Pay</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="attendanceBonus2" name="attendanceBonus2"readonly>
+              <input type="text" id="attendanceBonus2" name="attendanceBonus2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Atten. Bonus</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="commission2" name="commission2" readonly>
+              <input type="text" id="commission2" name="commission2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Commission</label>
             </div>
             <div class="form-input">      
-              <input type="text" id="total2" name="total2" readonly>
+              <input type="text" id="total2" name="total2" autocomplete="off" required>
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Total</label>
@@ -140,7 +140,7 @@
           </form>
           
         <div class="form-input">      
-          <input type="text" id="payPeriod" name="payPeriod" readonly>
+          <input type="text" id="payPeriod" name="payPeriod" autocomplete="off" required>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Pay Period Total</label>
