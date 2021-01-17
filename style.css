@@ -592,13 +592,13 @@ table tr:nth-child(2) td:last-child {
     }
 
     th {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         vertical-align: bottom;
-        padding: 1.5em .25em 0em .25em;
+        padding: 0.75em .25em 0em .25em;
     }
 
     td {
-        padding: 1em 0.25em;
+        padding: .30em 0.25em;
         font-size: 1.5rem;
     }
 }
