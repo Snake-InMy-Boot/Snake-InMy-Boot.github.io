@@ -89,6 +89,10 @@
     padding: 0em 0em 2em 0em;
 }
 
+.spacer {
+    padding:4em 0em;
+}
+
 .switch {
     position: relative;
     margin: 0 auto;
@@ -118,6 +122,7 @@
 .layer {
     width: 100%;
     background-color: #01589b25;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
     transition: 0.3s ease all;
     z-index: 1;
 }
@@ -147,18 +152,25 @@
     padding: 9px 4px;
     background-color:white;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.226);
     transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
+.switch:hover .layer {
+    background-color: #01589b77;
+}
+
+.switch:hover .checkbox:checked ~ .layer {
+    background-color: #01589b77;
+}
+
 .switch .checkbox:checked + .knobs:before {
-    color: white;
+    color: #01579b;
     left: 42px;
-    background-color:#01579b;
+    background-color:white;
 }
 
 .switch .checkbox:checked ~ .layer {
-    background-color:#ebf7fc;
+    background-color:#01579b;
 }
 
 .switch .knobs, .switch .knobs:before, .switch .layer {
@@ -211,15 +223,13 @@
 
 .form-input { 
     position:relative; 
-    margin: 2vh;
+    margin: 3vh;
 }
 
 .form-input.payperiodTotal {
-    padding: 2em 0em;
     width: 50%;
     margin: 0 auto;
 }
-
 
 .hide {
     display: none;
@@ -249,7 +259,7 @@ label          {
     font-size:1rem;
     font-weight:normal;
     position:absolute;
-    padding: .5em 0em 0em 0em;
+    padding: .25em 0em 0em 0em;
     pointer-events:none;
     top:0px;
     transition:0.2s ease all; 
@@ -258,10 +268,12 @@ label          {
 }
   
 /* active state */
-input:focus ~ label, 
+input:focus ~ label,
+input:hover ~ label, 
 input:valid ~ label,
 input:not(:placeholder-shown) ~ label {
-    top:-20px;
+    top:-15px;
+    left:5px;
     font-size:0.5rem;
     color: #01579b;
 }
@@ -302,19 +314,18 @@ input:focus ~ .bar:after {
 /* HIGHLIGHTER ================================== */
 .highlight {
     position: absolute;
-    top: 0%; 
-    height: 100%; 
+    top: -50%; 
+    height: 150%; 
     width: 100%; 
     pointer-events: none;
-    opacity: 0.35;
+    opacity: 0.45;
 }
-  
-/* active state */
-input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-}
+
+input:hover ~ .highlight {
+    -webkit-animation:inputHighlighter .5s ease;
+    -moz-animation:inputHighlighter .5s ease;
+    animation:inputHighlighter .5s ease;
+} 
  
 .bold-label {
     font-weight: bold;
@@ -354,7 +365,7 @@ input:focus ~ .highlight {
   
 .calc-button:hover, .calc-button:focus {
     cursor: pointer;
-    background-color: #01589bb6;
+    background-color: #01589bcb;
     box-shadow: none;
 }
 
