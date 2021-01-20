@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -51,7 +51,7 @@
 /* Create an active/current tablink class */
 .tab button.active {
     background-color:rgb(255, 255, 255);
-    color: rgb(16, 69, 126);
+    color:#01579b;
     font-weight: 500;
 }
 
@@ -68,7 +68,7 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    top: 10%;
+    top: 8%;
     height: 85%;
     color: #01579b;
 }
@@ -81,44 +81,29 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.row
-{
+.row {
     position: relative;
-    left: 25%;
     display: flex;
-    width: 50%
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0em 0em 2em 0em;
 }
 
-.toggle-button-cover {
-    display: table-cell;
+.switch {
     position: relative;
-    width: 200px;
-    height: 140px;
-    box-sizing: border-box;
+    margin: 0 auto;
+    top: 2em;
+    width: 74px;
+    height: 36px;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
 }
 
-.button-cover {
-    height: 100px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px -8px #c5d6d6;
-    border-radius: 4px;
+.button.r, .button.r .layer {
+    border-radius: 100px;
 }
 
-.button-cover:before {
-    counter-increment: button-counter;
-    content: counter(button-counter);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #d7e3e3;
-    font-size: 12px;
-    line-height: 1;
-    padding: 5px;
-}
-
-
-.button-cover, .knobs, .layer {
+.knobs, .layer {
     position: absolute;
     top: 0;
     right: 0;
@@ -126,38 +111,18 @@
     left: 0;
 }
 
-#button-1 {
-    position: relative;
-    margin: 0 auto;
-    top: 2em;
-    width: 74px;
-    height: 36px;
-    margin: 0 auto 0 auto;
-    overflow: hidden;
+.knobs {
+    z-index: 2;
 }
 
-#button-2 {
-    position: relative;
-    margin: 0 auto;
-    top: 2em;
-    width: 74px;
-    height: 36px;
-    margin: 0 auto 0 auto;
-    overflow: hidden;
+.layer {
+    width: 100%;
+    background-color: #01589b25;
+    transition: 0.3s ease all;
+    z-index: 1;
 }
 
-.button.r, .button.r .layer
-{
-    border-radius: 100px;
-}
-
-.button.b2
-{
-    border-radius: 2px;
-}
-
-.checkbox
-{
+.checkbox {
     position: relative;
     width: 100%;
     height: 100%;
@@ -168,122 +133,100 @@
     z-index: 3;
 }
 
-.knobs
-{
-    z-index: 2;
+.switch .knobs:before {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color:#01579b;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color:white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.226);
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-.layer
-{
-    width: 100%;
-    background-color: #ebf7fc;
+.switch .checkbox:checked + .knobs:before {
+    color: white;
+    left: 42px;
+    background-color:#01579b;
+}
+
+.switch .checkbox:checked ~ .layer {
+    background-color:#ebf7fc;
+}
+
+.switch .knobs, .switch .knobs:before, .switch .layer {
     transition: 0.3s ease all;
-    z-index: 1;
 }
 
-#button-1 .knobs:before
-{
+.switch.ftOrPt .knobs:before{
     content: 'FT';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 20px;
-    height: 10px;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1;
-    padding: 9px 4px;
-    background-color: #01579b;
-    border-radius: 50%;
-    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-#button-1 .checkbox:checked + .knobs:before
-{
+.switch.ftOrPt .checkbox:checked + .knobs:before {
     content: 'PT';
-    left: 42px;
-    background-color: #019b46;
 }
 
-#button-1 .checkbox:checked ~ .layer
-{
-    background-color:#ebf7fc;
-}
-
-#button-1 .knobs, #button-1 .knobs:before, #button-1 .layer
-{
-    transition: 0.3s ease all;
-}
-
-#button-2 .knobs:before
-{
+.switch.dayOrNite .knobs:before{
     content: 'Day';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 20px;
-    height: 10px;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1;
-    padding: 9px 4px;
-    background-color: #01579b;
-    border-radius: 50%;
-    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-#button-2 .checkbox:checked + .knobs:before
-{
+.switch.dayOrNite .checkbox:checked + .knobs:before {
     content: 'Nite';
-    left: 42px;
-    background-color: #019b46;
 }
 
-#button-2 .checkbox:checked ~ .layer
-{
-    background-color:#ebf7fc;
+.switch.basicOrAdv .knobs:before{
+    content: 'Bsc.';
 }
 
-#button-2 .knobs, #button-2 .knobs:before, #button-2 .layer
-{
-    transition: 0.3s ease all;
+.switch.basicOrAdv .checkbox:checked + .knobs:before {
+    content: 'Adv.';
 }
-
 
 .week-container {
     height: 90%;
     width:100%;
-    padding: 4em 0em;
+    padding: 2em 0em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
     color: #01579b;
-    
 }
 
-.commission-calc {
+.weekcolumn {
     position: relative;
-    width:45%;
+    width:48%;
 }
 
-.commission-calc h2 {
+.weekcolumn h2 {
     font-size: 1.8rem;
     text-align: center; 
 }
 
 .form-input { 
     position:relative; 
-    margin: 1.35vh;
+    margin: 2vh;
+}
+
+.form-input.payperiodTotal {
+    padding: 2em 0em;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
+.hide {
+    display: none;
+}
+
 input {
-    background-color: inherit;
+    background-color:inherit;
     text-align: center;
     position: relative;
     font-size:1.2rem;
@@ -293,7 +236,7 @@ input {
     border-bottom:1px solid #757575;
     color: inherit;
 }
-  
+
 input:focus {
     outline:none;
 }
@@ -316,10 +259,10 @@ label          {
   
 /* active state */
 input:focus ~ label, 
-input:valid ~ label {
-    top:-12px;
+input:valid ~ label,
+input:not(:placeholder-shown) ~ label {
+    top:-20px;
     font-size:0.5rem;
-    font-weight: 600;
     color: #01579b;
 }
   
@@ -373,7 +316,6 @@ input:focus ~ .highlight {
     animation:inputHighlighter 0.3s ease;
 }
  
-
 .bold-label {
     font-weight: bold;
     color: #01579b;
@@ -381,123 +323,70 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-    from { background: #01579b; }
+    from { background: #01589b25; }
     to  { width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-    from { background: #01579b; }
+    from { background: #01589b25; }
     to  { width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-    from { background: #01579b; }
+    from { background:#01589b25; }
     to  { width:0; background:transparent; }
 }
 
-
-.pure-material-button-contained {
+.calc-button {
     position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 4px;
-    padding: 0 1em;
-    min-width: 75px;
-    height: 36px;
-    left: 35%;
-    bottom: 5%;
-    transform: translatex(-35%);
-    vertical-align: middle;
-    text-align: center;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    background-color: rgb(var(--pure-material-primary-rgb, 1, 87, 155));
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-        font-size: 14px;
-    font-weight: 500;
-    line-height: 36px;
+    top: 75%;
+    display: block;
+    height: 3em;
+    margin: 0 auto;
+    padding: 0;
     overflow: hidden;
+    border-width: 0;
     outline: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .6);
+    background-color:#01579b;
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+  
+.calc-button:hover, .calc-button:focus {
     cursor: pointer;
-    transition: box-shadow 0.2s;
-}
-
-.pure-material-button-contained::-moz-focus-inner {
-    border: none;
-}
-
-/* Overlay */
-.pure-material-button-contained::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
-/* Ripple */
-.pure-material-button-contained::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    border-radius: 50%;
-    padding: 50%;
-    width: 32px; /* Safari */
-    height: 32px; /* Safari */
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-    transition: opacity 1s, transform 0.5s;
-}
-
-/* Hover, Focus */
-.pure-material-button-contained:hover,
-.pure-material-button-contained:focus {
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.pure-material-button-contained:hover::before {
-    opacity: 0.08;
-}
-
-.pure-material-button-contained:focus::before {
-    opacity: 0.24;
-}
-
-.pure-material-button-contained:hover:focus::before {
-    opacity: 0.3;
-}
-
-/* Active */
-.pure-material-button-contained:active {
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-
-.pure-material-button-contained:active::after {
-    opacity: 0.32;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0s;
-}
-
-/* Disabled */
-.pure-material-button-contained:disabled {
-    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
-    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+    background-color: #01589bb6;
     box-shadow: none;
-    cursor: initial;
 }
 
-.pure-material-button-contained:disabled::before {
-    opacity: 0;
+.calc-button > * {
+    position: relative;
 }
 
-.pure-material-button-contained:disabled::after {
-    opacity: 0;
+.calc-button span {
+    padding: 1em 2em;
+}
+
+.calc-button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+}
+
+.calc-button:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .1s ease-out, padding-top .1s ease-out;
 }
 
 .commission-table {
@@ -506,8 +395,6 @@ input:focus ~ .highlight {
     padding-bottom: 2em;
 
 }
-
-
 
 table {
     table-layout: fixed;
@@ -549,33 +436,6 @@ table tr:nth-child(2) td:last-child {
     border-top-right-radius: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     .tab button {
@@ -607,8 +467,6 @@ table tr:nth-child(2) td:last-child {
         font-size: 1.5rem;
     }
 }
-
-
 
 #Retention {
     padding: 150px 0;
