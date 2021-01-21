@@ -55,27 +55,33 @@
     font-weight: 500;
 }
 
+.wrapper {
+    position: relative;
+    background:white;
+    height: 100vh;
+}
+
 /* Style the tab content */
 .tabcontent {
-    position: absolute;
-    height:100%;
-    width:100%;
-    background:rgb(255, 255, 255);
+    position: relative;
+    width:100%;    
+    top:4em;
 }
 
 .content-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
-    top: 8%;
-    height: 85%;
+    height: 94vh;
     color: #01579b;
 }
 
 .card {
+    position: relative;
     flex: 1 0 325px;
-    margin: 0em 1em 2em 1em;
+    height: 90%;
+    margin: 2em;
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -90,7 +96,7 @@
 }
 
 .spacer {
-    padding:4em 0em;
+    padding:4em 0em 0em 0em;
 }
 
 .switch {
@@ -156,11 +162,11 @@
 }
 
 .switch:hover .layer {
-    background-color: #01589b77;
+    background-color: #01589b4f;
 }
 
 .switch:hover .checkbox:checked ~ .layer {
-    background-color: #01589b77;
+    background-color: #01589bcc;
 }
 
 .switch .checkbox:checked + .knobs:before {
@@ -401,18 +407,17 @@ input:hover ~ .highlight {
 }
 
 .commission-table {
-    height: 95%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     padding-bottom: 2em;
-
+    overflow: auto;
 }
 
 table {
     table-layout: fixed;
     position: relative;
     border-collapse: collapse;
-    height: 100%;
-    width: 100%;
+    width: 90%;
     left: 5%;
     text-align: center;
 }
@@ -428,7 +433,7 @@ tr:nth-child(even) {
 
 td {
     padding: 1em 0.25em;
-    font-size: 0.4rem;
+    font-size: 0.8rem;
 }
 
 table tr:last-child td:first-child {
@@ -446,13 +451,24 @@ table tr:nth-child(2) td:first-child {
 table tr:nth-child(2) td:last-child {
     border-top-right-radius: 10px;
 }
+    
+td p {
+    display: inline;
+    font-weight: bold;
+}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 550px) {
     /* For desktop: */
     .tab button {
         height: 2em;
         font-size: 2rem;
     }
+
+    .card {
+        position: relative;
+        flex: 1 0 550px;
+    }
+    
 
     .form-input { 
         margin: 2.5vh;
@@ -477,13 +493,13 @@ table tr:nth-child(2) td:last-child {
         padding: .30em 0.25em;
         font-size: 1.5rem;
     }
+    
+    td li {
+        text-align: left;
+        font-size: 1.2rem;
+        padding: .5rem;
+    }
+    
+
 }
 
-#Retention {
-    padding: 150px 0;
-    text-align: center;
-}
-
-#underwork {
-    height: 100px;
-}

@@ -9,550 +9,804 @@
     <title>Paycheck Calculator</title>
 </head>
 <body>
-  <!-- Tab links -->
-  <div class="navbar">
-    <div class="tab">
-        <a href="#" id="logo"><img src="./csllc_logo.png" alt="CSLLC Logo"></a>
-        <button class="tablinks" onclick="openCampaign(event, 'Select')">Select</button>
-        <button class="tablinks active" onclick="openCampaign(event, 'Blitz')">Blitz</button>
-        <button class="tablinks" onclick="openCampaign(event, 'Retention')">Retention</button>
-    </div>    
-  </div>  
-  <!-- Tab content -->
-  <section id="Select" class="tabcontent" style="display: none">
-    <div class="content-container">
-      <div class="card">
-        <form class="commission-calc">
-          <div class="row">
-            <div class="button r switch ftOrPt">
-              <input type="checkbox" id="ftOrPt" class="checkbox">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-            <div class="button r switch 2 dayOrNite">
-              <input type="checkbox" id="dayOrNite" class="checkbox">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-            <div class="button r switch 2 basicOrAdv">
-              <input type="checkbox" id="basicOrAdv1" class="checkbox BoA">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-          </div>
-          <div class="week-container">
-            <div name="week1" class="weekcolumn">
-              <h2>Week 1</h2>
-              <div class="form-input">      
-                <input type="number" id="units1" name="units1" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Units</label>
+  <header class="navbar">
+    <nav class="tab">
+      <button class="tablinks" onclick="openCampaign(event, 'Select')">Select</button>
+      <button class="tablinks" onclick="openCampaign(event, 'Blitz')">Blitz</button>
+      <button class="tablinks active" onclick="openCampaign(event, 'Retention')">Retention</button>
+      <a href="#" id="logo"><img src="img/csllc_logo.png" alt="CSLLC Logo"></a>
+    </nav>    
+  </header>
+  <div class="wrapper">
+    <section id="Select" class="tabcontent" style="display: none">
+      <div class="content-container">
+        <div class="card">
+          <form class="commission-calc">
+            <div class="row">
+              <div class="button r switch ftOrPt">
+                <input type="checkbox" id="ftOrPt" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input invisible hide">      
-                <input type="number" id="select1" name="select1" autocomplete="off" placeholder=" " required>                  
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Select Units</label>
+              <div class="button r switch 2 dayOrNite">
+                <input type="checkbox" id="dayOrNite" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input invisible hide" >      
-                <input type="number" id="apple1" name="apple1" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Apple TV</label>
-              </div>
-              <div class="form-input">      
-                <input type="number" step='0.01' id="hours1" name="hours1"00" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Hours</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="uph1" name="uph1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>                  
-                <label>UPH</label>
-              </div>
-              <div class="form-input invisible hide">      
-                <input type="text" id="hourlyRate1" name="hourlyRate1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Hourly Rate</label>
-              </div>
-              <div class="form-input invisible hide">      
-                <input type="text" id="dialPay1" name="dialPay1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Dial Pay</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="attendanceBonus1" name="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Atten. Bonus</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="commission1" name="commission1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Commission</label>
-              </div>
-              <div class="form-input">                        
-                <input type="text" id="total1" name="total1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Total</label>
+              <div class="button r switch 2 basicOrAdv">
+                <input type="checkbox" id="basicOrAdv1" class="checkbox BoA">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
             </div>
-            <div name="week2" class="weekcolumn">
-              <h2>Week 2</h2>
+            <div class="week-container">
+              <div name="week1" class="weekcolumn">
+                <h2>Week 1</h2>
                 <div class="form-input">      
-                <input type="number" id="units2" name="units2" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Units</label>
+                  <input type="number" id="units1" name="units1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Units</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="number" id="select1" name="select1" autocomplete="off" placeholder=" " required>                  
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Select Units</label>
+                </div>
+                <div class="form-input invisible hide" >      
+                  <input type="number" id="apple1" name="apple1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Apple TV</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hours1" name="hours1"00" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="uph1" name="uph1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>                  
+                  <label>UPH</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="text" id="hourlyRate1" name="hourlyRate1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="text" id="dialPay1" name="dialPay1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonus1" name="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commission1" name="commission1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">                        
+                  <input type="text" id="total1" name="total1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-              <div class="form-input invisible hide">      
-                <input type="number" id="select2" name="select2" autocomplete="off" placeholder=" " required>                  
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Select Units</label>
+              <div name="week2" class="weekcolumn">
+                <h2>Week 2</h2>
+                  <div class="form-input">      
+                  <input type="number" id="units2" name="units2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Units</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="number" id="select2" name="select2" autocomplete="off" placeholder=" " required>                  
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Select Units</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="number" id="apple2" name="apple2" autocomplete="off" placeholder=" " required>                  
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Apple TV</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hours2" name="hours2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="uph2" name="uph2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>UPH</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="text" id="hourlyRate2" name="hourlyRate2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisible hide">      
+                  <input type="text" id="dialPay2" name="dialPay2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonus2" name="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commission2" name="commission2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="total2" name="total2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-              <div class="form-input invisible hide">      
-                <input type="number" id="apple2" name="apple2" autocomplete="off" placeholder=" " required>                  
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Apple TV</label>
-              </div>
-              <div class="form-input">      
-                <input type="number" step='0.01' id="hours2" name="hours2" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Hours</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="uph2" name="uph2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>UPH</label>
-              </div>
-              <div class="form-input invisible hide">      
-                <input type="text" id="hourlyRate2" name="hourlyRate2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Hourly Rate</label>
-              </div>
-              <div class="form-input invisible hide">      
-                <input type="text" id="dialPay2" name="dialPay2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Dial Pay</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="attendanceBonus2" name="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Atten. Bonus</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="commission2" name="commission2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Commission</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="total2" name="total2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Total</label>
-              </div>
+              <div class="row spacer">
+                <div class="form-input payperiodTotal">      
+                  <input type="text" id="payPeriod" name="payPeriod" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Pay Period Total</label>
+                </div>
+                <div class="row">
+                  <button class="calc-button submit" type="button" onclick="findSelectUPH()">
+                    <span>Submit</span></button>
+                  <button class="calc-button reset" type="reset">
+                    <span>Reset</span></button>
+                </div>
+              </div> 
             </div>
-            <div class="row spacer">
-              <div class="form-input payperiodTotal">      
-                <input type="text" id="payPeriod" name="payPeriod" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Pay Period Total</label>
-              </div>
-              <div class="row">
-                <button class="calc-button submit" type="button" onclick="findSelectUPH()">
-                  <span>Submit</span></button>
-                <button class="calc-button reset" type="reset">
-                  <span>Reset</span></button>
-              </div>
-            </div> 
+          </form>
+        </div>
+      
+        <div class="card">
+          <div class="commission-table">
+            <table class="select-table">
+              <tr>
+                <th>% of Goal</th>
+                <th>Select UPH</th>
+                <th>FT Units per Week</th>
+                <th>PT Units per Week</th>
+                <th>Amount</th>
+              </tr>
+              <tr>
+                <td>100%</td>
+                <td>0.25</td>
+                <td>10</td>
+                <td>5</td>
+                <td>$2.65/hour</td>
+              </tr>
+              <tr>
+                <td>110%</td>
+                <td>0.28</td>
+                <td>11</td>
+                <td>6</td>
+                <td>$2.75/hour</td>
+              </tr>
+              <tr>
+                <td>120%</td>
+                <td>0.30</td>
+                <td>12</td>
+                <td>6</td>
+                <td>$2.90/hour</td>
+              </tr>
+              <tr>
+                <td>130%</td>
+                <td>0.33</td>
+                <td>13</td>
+                <td>7</td>
+                <td>$3.00/hour</td>
+              </tr>
+              <tr>
+                <td>140%</td>
+                <td>0.35</td>
+                <td>14</td>
+                <td>7</td>
+                <td>$3.15/hour</td>
+              </tr>
+              <tr>
+                <td>150%</td>
+                <td>0.38</td>
+                <td>15</td>
+                <td>8</td>
+                <td>$4.05/hour</td>
+              </tr>
+              <tr>
+                <td>160%</td>
+                <td>0.40</td>
+                <td>16</td>
+                <td>8</td>
+                <td>$4.50/hour</td>
+              </tr>
+              <tr>
+                <td>170%</td>
+                <td>0.43</td>
+                <td>17</td>
+                <td>9</td>
+                <td>$5.05/hour</td>
+              </tr>
+              <tr>
+                <td>180%</td>
+                <td>0.45</td>
+                <td>18</td>
+                <td>9</td>
+                <td>$6.45/hour</td>
+              </tr>
+              <tr>
+                <td>190%</td>
+                <td>0.48</td>
+                <td>19</td>
+                <td>10</td>
+                <td>$7.70/hour</td>
+              </tr>
+              <tr>
+                <td>200%</td>
+                <td>0.50</td>
+                <td>20</td>
+                <td>10</td>
+                <td>$8.95/hour</td>
+              </tr>
+              <tr>
+                <th colspan="3">Pay Scale</th>
+                <th colspan="2">Amount</th>
+              </tr>
+              <tr>
+                <td colspan="3">Base Rate</td>
+                <td colspan="2">$10.00/Hour</td>
+              </tr>              
+              <tr>
+                <td colspan="3">Attendance Bonus</td>
+                <td colspan="2">$1.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Attendance Bonus (FT Nights)</td>
+                <td colspan="2">$2.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Every Unit Over 200%</td>
+                <td colspan="2">$5/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">Apple TV Units</td>
+                <td colspan="2">$5/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">Select Units</td>
+                <td colspan="2">$7/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">Mobile Transfer Sold (1st, 2nd, 3rd+)</td>
+                <td colspan="2">$10, $15, $20/Unit</td>
+              </tr>
+            </table>
           </div>
-        </form>
-      </div>
-    
-      <div class="card">
-        <div class="commission-table">
-          <table class="select-table">
-            <tr>
-              <th>% of Goal</th>
-              <th>Select UPH</th>
-              <th>FT Units per Week</th>
-              <th>PT Units per Week</th>
-              <th>Amount</th>
-            </tr>
-            <tr>
-              <td>100%</td>
-              <td>0.25</td>
-              <td>10</td>
-              <td>5</td>
-              <td>$2.65/hour</td>
-            </tr>
-            <tr>
-              <td>110%</td>
-              <td>0.28</td>
-              <td>11</td>
-              <td>6</td>
-              <td>$2.75/hour</td>
-            </tr>
-            <tr>
-              <td>120%</td>
-              <td>0.30</td>
-              <td>12</td>
-              <td>6</td>
-              <td>$2.90/hour</td>
-            </tr>
-            <tr>
-              <td>130%</td>
-              <td>0.33</td>
-              <td>13</td>
-              <td>7</td>
-              <td>$3.00/hour</td>
-            </tr>
-            <tr>
-              <td>140%</td>
-              <td>0.35</td>
-              <td>14</td>
-              <td>7</td>
-              <td>$3.15/hour</td>
-            </tr>
-            <tr>
-              <td>150%</td>
-              <td>0.38</td>
-              <td>15</td>
-              <td>8</td>
-              <td>$4.05/hour</td>
-            </tr>
-            <tr>
-              <td>160%</td>
-              <td>0.40</td>
-              <td>16</td>
-              <td>8</td>
-              <td>$4.50/hour</td>
-            </tr>
-            <tr>
-              <td>170%</td>
-              <td>0.43</td>
-              <td>17</td>
-              <td>9</td>
-              <td>$5.05/hour</td>
-            </tr>
-            <tr>
-              <td>180%</td>
-              <td>0.45</td>
-              <td>18</td>
-              <td>9</td>
-              <td>$6.45/hour</td>
-            </tr>
-            <tr>
-              <td>190%</td>
-              <td>0.48</td>
-              <td>19</td>
-              <td>10</td>
-              <td>$7.70/hour</td>
-            </tr>
-            <tr>
-              <td>200%</td>
-              <td>0.50</td>
-              <td>20</td>
-              <td>10</td>
-              <td>$8.95/hour</td>
-            </tr>
-            <tr>
-              <th colspan="3">Additional Incentives</th>
-              <th colspan="2">Amount</th>
-            </tr>
-            <tr>
-              <td colspan="3">FT Night Shift (Attendance Bonus)</td>
-              <td colspan="2">$1/hour</td>
-            </tr>
-            <tr>
-              <td colspan="3">Every Unit Over 200%</td>
-              <td colspan="2">$5/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">Apple TV Units</td>
-              <td colspan="2">$5/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">Select Units</td>
-              <td colspan="2">$7/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">1st Mobile Transfer Sold</td>
-              <td colspan="2">$10/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">2nd Mobile Transfer Sold</td>
-              <td colspan="2">$15/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">3rd and Up Mobile Transfer Sold</td>
-              <td colspan="2">$20/Unit</td>
-            </tr>
-          </table>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="Blitz" class="tabcontent" style="display: block">
-    <div class="content-container">
-      <div class="card">
-        <form class="commission-calc">
-          <div class="row">
-            <div class="button r switch ftOrPt">
-              <input type="checkbox" id="ftOrPtBlitz" class="checkbox">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-            <div class="button r switch 2 dayOrNite">
-              <input type="checkbox" id="dayOrNiteBlitz" class="checkbox">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-            <div class="button r switch 2 basicOrAdv">
-              <input type="checkbox" id="basicOrAdvBlitz" class="checkbox">
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-          </div>
-          <div class="week-container">
-            <div name="week1" class="weekcolumn">
-              <h2>Week 1</h2>
-              <div class="form-input">      
-                <input type="number" id="unitsBlitz1" name="units1" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Units</label>
+    </section>
+    <section id="Blitz" class="tabcontent" style="display: none">
+      <div class="content-container">
+        <div class="card">
+          <form class="commission-calc">
+            <div class="row">
+              <div class="button r switch ftOrPt">
+                <input type="checkbox" id="ftOrPtBlitz" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input">      
-                <input type="number" step='0.01' id="hoursBlitz1" name="hours1"00" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Hours</label>
+              <div class="button r switch 2 dayOrNite">
+                <input type="checkbox" id="dayOrNiteBlitz" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input">      
-                <input type="text" id="uphBlitz1" name="uph1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>                  
-                <label>UPH</label>
-              </div>
-              <div class="form-input invisibleBlitz hide">      
-                <input type="text" id="hourlyRateBlitz1" name="hourlyRate1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Hourly Rate</label>
-              </div>
-              <div class="form-input invisibleBlitz hide">      
-                <input type="text" id="dialPayBlitz1" name="dialPay1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Dial Pay</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="attendanceBonusBlitz1" name="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Atten. Bonus</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="commissionBlitz1" name="commission1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Commission</label>
-              </div>
-              <div class="form-input">                        
-                <input type="text" id="totalBlitz1" name="total1" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Total</label>
+              <div class="button r switch 2 basicOrAdv">
+                <input type="checkbox" id="basicOrAdvBlitz" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
             </div>
-            <div name="week2" class="weekcolumn">
-              <h2>Week 2</h2>
+            <div class="week-container">
+              <div name="week1" class="weekcolumn">
+                <h2>Week 1</h2>
                 <div class="form-input">      
-                <input type="number" id="unitsBlitz2" name="units2" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Units</label>
+                  <input type="number" id="unitsBlitz1" name="units1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Units</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hoursBlitz1" name="hours1"00" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="uphBlitz1" name="uph1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>                  
+                  <label>UPH</label>
+                </div>
+                <div class="form-input invisibleBlitz hide">      
+                  <input type="text" id="hourlyRateBlitz1" name="hourlyRate1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisibleBlitz hide">      
+                  <input type="text" id="dialPayBlitz1" name="dialPay1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonusBlitz1" name="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commissionBlitz1" name="commission1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">                        
+                  <input type="text" id="totalBlitz1" name="total1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-              <div class="form-input">      
-                <input type="number" step='0.01' id="hoursBlitz2" name="hours2" autocomplete="off" placeholder=" " required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="bold-label">Hours</label>
+              <div name="week2" class="weekcolumn">
+                <h2>Week 2</h2>
+                  <div class="form-input">      
+                  <input type="number" id="unitsBlitz2" name="units2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Units</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hoursBlitz2" name="hours2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="uphBlitz2" name="uph2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>UPH</label>
+                </div>
+                <div class="form-input invisibleBlitz hide">      
+                  <input type="text" id="hourlyRateBlitz2" name="hourlyRate2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisibleBlitz hide">      
+                  <input type="text" id="dialPayBlitz2" name="dialPay2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonusBlitz2" name="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commissionBlitz2" name="commission2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="totalBlitz2" name="total2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-              <div class="form-input">      
-                <input type="text" id="uphBlitz2" name="uph2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>UPH</label>
+              <div class="row spacer">
+                <div class="form-input payperiodTotal">      
+                  <input type="text" id="payPeriodBlitz" name="payPeriod" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Pay Period Total</label>
+                </div>
+                <div class="row">
+                  <button class="calc-button submit" type="button" onclick="findBlitzUPH()">
+                    <span>Submit</span></button>
+                  <button class="calc-button resetBlitz" type="reset">
+                    <span>Reset</span></button>
+                </div>
+              </div> 
+            </div>
+          </form>
+        </div>
+      
+        <div class="card">
+          <div class="commission-table">
+            <table class="select-table">
+              <tr>
+                <th>% of Goal</th>
+                <th>Select UPH</th>
+                <th>FT Units per Week</th>
+                <th>PT Units per Week</th>
+                <th>Amount</th>
+              </tr>
+              <tr>
+                <td>0%</td>
+                <td>0.0</td>
+                <td> - </td>
+                <td> - </td>
+                <td>$10/Unit</td>
+              </tr>
+              <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>100%</td>
+                <td>0.13</td>
+                <td>6</td>
+                <td>3</td>
+                <td>$15/Unit</td>
+              </tr>
+              <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>154%</td>
+                <td>0.20</td>
+                <td>8</td>
+                <td>4</td>
+                <td>$20/Unit</td>
+              </tr>
+              <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>192%</td>
+                <td>0.25</td>
+                <td>10</td>
+                <td>5</td>
+                <td>$25/Unit</td>
+              </tr>
+              <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>254%</td>
+                <td>0.32</td>
+                <td>13</td>
+                <td>7</td>
+                <td>$30/Unit</td>
+              </tr>
+              <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+                <td> - </td>
+              </tr>
+              <tr>
+                <td>308%</td>
+                <td>0.40</td>
+                <td>16</td>
+                <td>8</td>
+                <td>$35/Unit</td>
+              </tr>
+              <tr>
+                <th colspan="3">Pay Scale</th>
+                <th colspan="2">Amount</th>
+              </tr>
+              <tr>
+                <td colspan="3">Base Rate</td>
+                <td colspan="2">$10.50/Hour</td>
+              </tr>              
+              <tr>
+                <td colspan="3">Attendance Bonus</td>
+                <td colspan="2">$1.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Attendance Bonus (FT Nights)</td>
+                <td colspan="2">$2.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Apple TV Units</td>
+                <td colspan="2">$5/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">1st Mobile Transfer Sold</td>
+                <td colspan="2">$10/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">2nd Mobile Transfer Sold</td>
+                <td colspan="2">$15/Unit</td>
+              </tr>
+              <tr>
+                <td colspan="3">3rd and Up Mobile Transfer Sold</td>
+                <td colspan="2">$20/Unit</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Retention" class="tabcontent" style="display: block">
+      <div class="content-container">
+        <div class="card">
+          <form class="commission-calc">
+            <div class="row">
+              <div class="button r switch ftOrPt">
+                <input type="checkbox" id="ftOrPtRetention" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input invisibleBlitz hide">      
-                <input type="text" id="hourlyRateBlitz2" name="hourlyRate2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Hourly Rate</label>
+              <div class="button r switch 2 dayOrNite">
+                <input type="checkbox" id="dayOrNiteRetention" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
-              <div class="form-input invisibleBlitz hide">      
-                <input type="text" id="dialPayBlitz2" name="dialPay2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Dial Pay</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="attendanceBonusBlitz2" name="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Atten. Bonus</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="commissionBlitz2" name="commission2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Commission</label>
-              </div>
-              <div class="form-input">      
-                <input type="text" id="totalBlitz2" name="total2" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Total</label>
+              <div class="button r switch 2 basicOrAdv">
+                <input type="checkbox" id="basicOrAdvRetention" class="checkbox">
+                <span class="knobs"></span>
+                <span class="layer"></span>
               </div>
             </div>
-            <div class="row spacer">
-              <div class="form-input payperiodTotal">      
-                <input type="text" id="payPeriodBlitz" name="payPeriod" autocomplete="off" placeholder=" " readonly>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Pay Period Total</label>
+            <div class="week-container">
+              <div name="week1" class="weekcolumn">
+                <h2>Week 1</h2>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="number" step='0.01' id="gfrRetention1" name="gfr1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Grandfathered Rate</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" id="unitsRetention1" name="units1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Mobile Units</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" id="ahtRetention1" name="aht1" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>                  
+                  <label class="bold-label">AHT</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hoursRetention1" name="hours1"00" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="text" id="hourlyRateRetention1" name="hourlyRate1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="text" id="dialPayRetention1" name="dialPay1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonusRetention1" name="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commissionRetention1" name="commission1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">                        
+                  <input type="text" id="totalRetention1" name="total1" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-              <div class="row">
-                <button class="calc-button submit" type="button" onclick="findBlitzUPH()">
-                  <span>Submit</span></button>
-                <button class="calc-button reset" type="reset">
-                  <span>Reset</span></button>
+              <div name="week2" class="weekcolumn">
+                <h2>Week 2</h2>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="number" step='0.01' id="gfrRetention2" name="gfr2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Grandfathered Rate</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" id="unitsRetention2" name="units2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Mobile Units</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" id="ahtRetention2" name="aht2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">AHT</label>
+                </div>
+                <div class="form-input">      
+                  <input type="number" step='0.01' id="hoursRetention2" name="hours2" autocomplete="off" placeholder=" " required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label class="bold-label">Hours</label>
+                </div>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="text" id="hourlyRateRetention2" name="hourlyRate2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="form-input invisibleRetention hide">      
+                  <input type="text" id="dialPayRetention2" name="dialPay2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Dial Pay</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="attendanceBonusRetention2" name="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Atten. Bonus</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="commissionRetention2" name="commission2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Commission</label>
+                </div>
+                <div class="form-input">      
+                  <input type="text" id="totalRetention2" name="total2" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Total</label>
+                </div>
               </div>
-            </div> 
+              <div class="row spacer">
+                <div class="form-input payperiodTotal">      
+                  <input type="text" id="payPeriodRetention" name="payPeriod" autocomplete="off" placeholder=" " readonly>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Pay Period Total</label>
+                </div>
+                <div class="row">
+                  <button class="calc-button submit" type="button" onclick="findRetentionUPH()">
+                    <span>Submit</span></button>
+                  <button class="calc-button resetRetention" type="reset">
+                    <span>Reset</span></button>
+                </div>
+              </div> 
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <div class="commission-table">
+            <table class="select-table">
+              <th colspan="5">Retention Tips</th>
+              <tr>
+                <td colspan="5">
+                  <p>
+                    <ul>
+                      <li>
+                        <p>Spectrum Mobile </p>is an important metric we are measured on. Mobile pays the bills! 
+                        Sales skills are extremely important when it comes to offering Spectrum Mobile. 
+                        The only thing that will beat skill EVERY time is consistency. We are measured on  
+                        the number of mobile accounts sold per call. The ideal goal is 3 units every 200 calls 
+                        (1.5% Conversion). If you only pitch mobile to 1 out of  every 10 people you talk to, 
+                        that means you are forcing yourself to sell 3 units every 20 calls (15% Conversion). 
+                        Yikes! Be consistent! 😱
+                      </li>
+                      <li>
+                        <p>Average Handle Time</p> (AHT) is another important metric we are measured on. 
+                        This is the time from the moment you answer a call until you are able to be
+                        available for the next one. AHT is the sum of your Talk Time, Hold Time, 
+                        Conference Time, and After Call Work Time for each call. This is averaged 
+                        out across the total number of calls you pull for the week and will allow you
+                        to earn up to an additional $1.00 per hour, depending on which AHT Tier you hit!
+                        Keeping AHT in line with goals is huge when it comes to assisting customers. Think of any
+                        time you had to wait on hold for longer than 5 minutes to speak to a representative for 
+                        a company... 😤
+                      </li>
+                      <li>
+                        <p>Save Rate</p> is the final important metric we are measured on. This is why our department exists.
+                        Your save rate is based on how many lines of business (LOBs) a customer has left after have you assisted them,
+                        compared to when you initially answered their phone call. It is our goal to use the tools we've been
+                        given to address a customer's concerns and get them to reconsider cancelling any lines of business. One of the
+                        best tools we have is Spectrum Mobile! 😁
+                      </li>
+                    </ul>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th colspan="3">Pay Scale</th>
+                <th colspan="2">Amount</th>
+              </tr>
+              <tr>
+                <td colspan="3">Base Rate</td>
+                <td colspan="2">$11.00/Hour</td>
+              </tr>              
+              <tr>
+                <td colspan="3">Attendance Bonus</td>
+                <td colspan="2">$2.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Attendance Bonus (FT Nights)</td>
+                <td colspan="2">$3.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Grandfathered Commission</td>
+                <td colspan="2">$(Varies)/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">AHT Tier 2 (<p>750 > 800</p>)</td>
+                <td colspan="2">$1.00/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">AHT Tier 1 (<p>700 > 750</p> or <p>800 > 850</p>) </850> </750> </td>
+                <td colspan="2">$0.50/Hour</td>
+              </tr>
+              <tr>
+                <td colspan="3">Mobile Units</td>
+                <td colspan="2">$25/Unit</td>
+              </tr>
+            </table>
           </div>
-        </form>
+        </div>
       </div>
-    
-      <div class="card">
-        <div class="commission-table">
-          <table class="select-table">
-            <tr>
-              <th>% of Goal</th>
-              <th>Select UPH</th>
-              <th>FT Units per Week</th>
-              <th>PT Units per Week</th>
-              <th>Amount</th>
-            </tr>
-            <tr>
-              <td>0%</td>
-              <td>0.0</td>
-              <td> - </td>
-              <td> - </td>
-              <td>$10/Unit</td>
-            </tr>
-            <tr>
-              <td>100%</td>
-              <td>0.13</td>
-              <td>6</td>
-              <td>3</td>
-              <td>$15/Unit</td>
-            </tr>
-            <tr>
-              <td>154%</td>
-              <td>0.20</td>
-              <td>8</td>
-              <td>4</td>
-              <td>$20/Unit</td>
-            </tr>
-            <tr>
-              <td>192%</td>
-              <td>0.25</td>
-              <td>10</td>
-              <td>5</td>
-              <td>$25/Unit</td>
-            </tr>
-            <tr>
-              <td>254%</td>
-              <td>0.32</td>
-              <td>13</td>
-              <td>7</td>
-              <td>$30/Unit</td>
-            </tr>
-            <tr>
-              <td>308%</td>
-              <td>0.40</td>
-              <td>16</td>
-              <td>8</td>
-              <td>$35/Unit</td>
-            </tr>
-            <tr>
-              <td> - </td>
-              <td> - </td>
-              <td> - </td>
-              <td> - </td>
-              <td> - </td>
-            </tr>
-            <tr>
-              <th colspan="3">Additional Incentives</th>
-              <th colspan="2">Amount</th>
-            </tr>
-            <tr>
-              <td colspan="3">Blitz Rep Base Rate Increase</td>
-              <td colspan="2">$0.50/Hour</td>
-            </tr>
-            <tr>
-              <td colspan="3">FT Nights (Attendance Bonus)</td>
-              <td colspan="2">$1/Hour</td>
-            </tr>
+    </section>
+  </div> 
+ 
 
-            <tr>
-              <td colspan="3">Apple TV Units</td>
-              <td colspan="2">$5/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">Select Units</td>
-              <td colspan="2">$7/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">1st Mobile Transfer Sold</td>
-              <td colspan="2">$10/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">2nd Mobile Transfer Sold</td>
-              <td colspan="2">$15/Unit</td>
-            </tr>
-            <tr>
-              <td colspan="3">3rd and Up Mobile Transfer Sold</td>
-              <td colspan="2">$20/Unit</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="Retention" class="tabcontent" style="display: none">
-    <img src="./loading.png" id="underwork" alt="loading">
-    <h1>Currently Under Development</h1>
-    <p>Please be patient while we work to get everything up and running.</p>
-  </section>
-  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
