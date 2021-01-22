@@ -73,7 +73,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 94vh;
+    height: 96vh;
     color: #01579b;
 }
 
@@ -81,7 +81,7 @@
     position: relative;
     flex: 1 0 325px;
     height: 90%;
-    margin: 2em;
+    margin: 2em 1em;
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);

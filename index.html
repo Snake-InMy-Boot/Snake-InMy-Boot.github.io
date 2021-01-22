@@ -11,14 +11,14 @@
 <body>
   <header class="navbar">
     <nav class="tab">
-      <button class="tablinks" onclick="openCampaign(event, 'Select')">Select</button>
+      <button class="tablinks active" onclick="openCampaign(event, 'Select')">Select</button>
       <button class="tablinks" onclick="openCampaign(event, 'Blitz')">Blitz</button>
-      <button class="tablinks active" onclick="openCampaign(event, 'Retention')">Retention</button>
+      <button class="tablinks" onclick="openCampaign(event, 'Retention')">Retention</button>
       <a href="#" id="logo"><img src="img/csllc_logo.png" alt="CSLLC Logo"></a>
     </nav>    
   </header>
   <div class="wrapper">
-    <section id="Select" class="tabcontent" style="display: none">
+    <section id="Select" class="tabcontent" style="display: block">
       <div class="content-container">
         <div class="card">
           <form class="commission-calc">
@@ -574,7 +574,7 @@
         </div>
       </div>
     </section>
-    <section id="Retention" class="tabcontent" style="display: block">
+    <section id="Retention" class="tabcontent" style="display: none">
       <div class="content-container">
         <div class="card">
           <form class="commission-calc">
