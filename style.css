@@ -417,6 +417,7 @@ table {
     table-layout: fixed;
     position: relative;
     border-collapse: collapse;
+    height: 100%;
     width: 90%;
     left: 5%;
     text-align: center;
@@ -491,12 +492,12 @@ td p {
 
     td {
         padding: .30em 0.25em;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     td li {
         text-align: left;
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: .5rem;
     }
     
