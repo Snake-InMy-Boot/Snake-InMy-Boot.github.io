@@ -410,7 +410,6 @@ input:hover ~ .highlight {
     height: 100%;
     width: 100%;
     padding-bottom: 2em;
-    overflow: auto;
 }
 
 table {
@@ -456,6 +455,10 @@ table tr:nth-child(2) td:last-child {
 td p {
     display: inline;
     font-weight: bold;
+}
+
+td li {
+    font-size: .6rem;
 }
 
 @media only screen and (min-width: 550px) {
