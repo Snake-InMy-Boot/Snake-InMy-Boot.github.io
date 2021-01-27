@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../style.css" rel="stylesheet" />
+    <title>Paycheck Calculator</title>
+</head>
+<body class="retention">
+    <header class="header">
+        <nav class="topnav" id="myTopnav">
+            <a href="../index.html"><img src="../img/csllc_logo.png" class="logo" alt="CSLLC"></img></a>
+            <a href="./select.html">Select</a>
+            <a href="./blitz.html">Blitz</a>
+            <a href="./retention.html" class="active">Retention</a>
+            <a href="javascript:void(0);" class="icon" onclick="campainSelector()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <div class="card">
+                <div class="row">
+                    <div class="button r switch scheduleSelector">
+                        <input type="checkbox" id="scheduleSelector" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                    <div class="button r switch 2 shiftSelector">
+                        <input type="checkbox" id="shiftSelector" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                    <div class="button r switch 2 advancedOptions">
+                        <input type="checkbox" id="advancedOptions" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                </div>
+                <form class="commission-calc">
+                    <div class="container week">
+                        <div class="row og-rate">    
+                            <div class="form-input hide display-none">
+                                <input type="text" id="ogRate" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>OG Commission Rate<span> *</span></label>
+                            </div>
+                        </div>
+                        <div class="weekcol" id="week1">
+                            <h2>Week 1</h2>
+                            <div class="form-input">
+                                <input type="number" id="mobileUnits1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Mobile Units<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" id="aht1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>AHT<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" step='0.01' id="hours1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hours<span> *</span></label> 
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="text" id="hourlyRate1"  autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="dialPay1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Dial Pay</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Atten. Bonus</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="commission1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Commission</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="total1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Total</label>
+                            </div>
+                        </div>    
+                        <div class="weekcol" id="week2">
+                            <h2>Week 2</h2>
+                            <div class="form-input">
+                                <input type="number" id="mobileUnits2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Mobile Units<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" id="aht2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>AHT<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" step='0.01' id="hours2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hours<span> *</span></label> 
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="text" id="hourlyRate2"  autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="dialPay2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Dial Pay</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Atten. Bonus</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="commission2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Commission</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="total2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Total</label>
+                            </div>
+                        </div>
+                        <div class="row payperiod">    
+                            <div class="form-input">
+                                <input type="text" id="payPeriodTotal" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Pay Period Total</label>
+                            </div>
+                        </div>
+                        <div class="row buttonpadding">
+                            <button class="calc-button submit" type="button" onclick="calculate()">
+                            <span>Submit</span></button>
+                            <button class="calc-button reset" type="reset">
+                            <span>Reset</span></button>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+            <div class="card">
+                <div class="container table">
+                    <table id="tableRetention">
+                        <th colspan="5"><h2>Retention Tips</h2></th>
+                        <tr><td colspan="5"><p><ul>
+                            <li><p>Spectrum Mobile</p> is an important metric we are measured on. Mobile pays the bills! 
+                            Sales skills are extremely important when it comes to offering Spectrum Mobile. 
+                            The only thing that will beat skill EVERY time is consistency. We are measured on  
+                            the number of mobile accounts sold per call... The ideal goal is 3 units every 200 calls 
+                            (1.5% Conversion). If you only pitch mobile to 1 out of  every 10 people you talk to, 
+                            that means you are forcing yourself to sell 3 units every 20 calls (15% Conversion). 
+                            Yikes! Be consistent! 😱
+                            </li>
+                            <li><p>Average Handle Time</p> (AHT) is another important metric we are measured on. 
+                            This is the time from the moment you answer a call until you are able to be
+                            available for the next one. AHT is the sum of your Talk Time, Hold Time, 
+                            Conference Time, and After Call Work Time for each call... This is averaged 
+                            out across the total number of calls you pull for the week and will allow you
+                            to earn up to an additional $1.00 per hour, depending on which AHT Tier you hit!
+                            Keeping AHT in line with goals is huge when it comes to assisting customers. Think of any
+                            time you had to wait on hold for longer than 5 minutes to speak to a representative for 
+                            a company... 😤
+                            </li>
+                            <li><p>Save Rate</p> is the final important metric we are measured on. This is why our 
+                            department exists. Your save rate is based on how many lines of business (LOBs) a customer 
+                            has left after have you assisted them, compared to when you initially answered their phone 
+                            call... It is our goal to use the tools we've been given to address a customer's concerns 
+                            and get them to reconsider cancelling any lines of business. One of the best tools we have 
+                            is Spectrum Mobile! 😁
+                            </li>
+                        </ul></p></td></tr>
+                        <tr><th colspan="3">Pay Scale</th><th colspan="2">Amount</th></tr>
+                        <tr><td colspan="3">Base Rate</td><td colspan="2">$11.00/Hour</td></tr>              
+                        <tr><td colspan="3">Attendance Bonus</td><td colspan="2">$2.00/Hour</td></tr>
+                        <tr><td colspan="3">Attendance Bonus (FT Nights)</td><td colspan="2">$3.00/Hour</td></tr>
+                        <tr><td colspan="3">Grandfathered Commission</td><td colspan="2">$(Varies)/Hour</td></tr>
+                        <tr><td colspan="3">AHT Tier 2 (<p>750 > 800</p>)</td><td colspan="2">$1.00/Hour</td></tr>
+                        <tr><td colspan="3">AHT Tier 1 (<p>700 > 750</p> or <p>800 > 850</p>) </850> </750> </td><td colspan="2">$0.50/Hour</td></tr>
+                        <tr><td colspan="3">Mobile Units</td><td colspan="2">$25/Unit</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/retention.js"></script>
+</body>
+</html>

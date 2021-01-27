@@ -1,509 +1,568 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
+/* 
+Saving this theme selector
 
-}
+:root { 
+  --default_bg: rgb(0, 54, 105);
+  --default_lt: white;
+  --default_dt: black;
+  --select_bg: rgb(223, 219, 0);
+  --select_lt: white;
+  --select_dt: black;
+  --blitz_bg: rgb(185, 0, 0);
+  --retention_bg: rgb(175, 0, 175);
+  --retention_lt: white;
+  --retention_dt: black;
+} */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f8f8;
 }
-
-/* Style the tab */
-.tab {
-    position: relative;
-    overflow: hidden;
-    background:rgb(16, 69, 126);
-}
-  
-.tab img {
-    height: 3em;
-    float: right;
-    margin: 0.5em 1em;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-    height: 4em;
-    width: 20%;
-    float: left;
-    border: none;
-    border-radius: 0px;
-    outline: none;
-    background-color: inherit;
-    cursor: pointer;
-    font-size: 1rem;
-    color: white;
-    transition: 0.3s;
-}
-  
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: rgba(221, 221, 221, 0.2);
-}
-  
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color:rgb(255, 255, 255);
-    color:#01579b;
-    font-weight: 500;
+ 
+/* Styling for website navbar */
+.topnav {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(0, 54, 105);
+  overflow: hidden;
+  z-index: 999;
 }
 
-.wrapper {
-    position: relative;
-    background:white;
-    height: 100vh;
+.topnav img {
+  position: relative;
+  top: .5rem;
+  height: 2.2rem;
 }
 
-/* Style the tab content */
-.tabcontent {
-    position: relative;
-    width:100%;    
-    top:4em;
+.topnav a {
+  position: relative;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.875rem 3rem;
+  text-decoration: none;
+  font-size: 2rem;
 }
 
-.content-container {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 96vh;
-    color: #01579b;
+.topnav a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.topnav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.65);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+section {position: relative;
+  top: 5rem;
+}
+
+/* Styling for content cards */
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color:  rgb(0, 54, 105);
 }
 
 .card {
-    position: relative;
-    flex: 1 0 325px;
-    height: 90%;
-    margin: 2em 1em;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  flex: 1 0 325px;
+  padding-bottom: 2em;
+  margin: 2em 1em;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container.fill {
+  flex-wrap: nowrap;
+}
+
+
+.card.fill {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translatex(-50%);
+  height: 70vh;
+  width: 70vw;
+}
+
+.landing-page {
+  
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-page h1 {
+  margin: 6rem 0rem 3rem 0;
+  padding: 0;
+  font-size: 5rem;
+}
+
+.landing-page h2 {
+  margin: 0rem 0rem 2rem 0;
+  padding: 0;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgb(64, 106, 145);
+}
+
+.landing-page h3 {
+  position: relative;
+  top: 1rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  color: rgb(64, 106, 145);
+}
+.landing-page li {
+  position: relative;
+  top: 1rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  text-align: left;
+  font-size: 1rem;
+  color: rgb(64, 106, 145);
+}
+
+a svg {
+  display: inline-block;
+  margin: 0rem 7rem 0 7rem;
+  padding:0;
+  height: 3rem;
+  width: 3rem;
+  fill: rgb(0, 54, 105);
+}
+
+a svg:hover {
+  fill: rgb(61, 115, 165);
+  transform: scale(1.1);
+}
+
+.container.icons h3 {
+  margin-bottom:1.2rem;
+  padding: 0;
+  font-size: 1.2;
+  font-weight: 400;
+  
 }
 
 .row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 0em 0em 2em 0em;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0em 0em 5em 0em;
 }
 
-.spacer {
-    padding:4em 0em 0em 0em;
+.og-rate, .buttonpadding {
+  padding: 0;
+}
+ .payperiod {
+  content: "";
+  padding: 2em 0em 0em 0em;
 }
 
+/* Styling for buttons on forms */
 .switch {
-    position: relative;
-    margin: 0 auto;
-    top: 2em;
-    width: 74px;
-    height: 36px;
-    margin: 0 auto 0 auto;
-    overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  top: 2em;
+  width: 74px;
+  height: 36px;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
 }
 
 .button.r, .button.r .layer {
-    border-radius: 100px;
+  border-radius: 100px;
 }
 
 .knobs, .layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .knobs {
-    z-index: 2;
+  z-index: 2;
 }
 
 .layer {
-    width: 100%;
-    background-color: #01589b25;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
-    transition: 0.3s ease all;
-    z-index: 1;
+  width: 100%;
+  background-color: #01589b25;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease all;
+  z-index: 1;
 }
 
 .checkbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .switch .knobs:before {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 20px;
-    height: 10px;
-    color:#01579b;
-    font-size: 10px;
-    font-weight: 500;
-    text-align: center;
-    line-height: 1;
-    padding: 9px 4px;
-    background-color:white;
-    border-radius: 50%;
-    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: rgb(0, 54, 105);
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color:white;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
 .switch:hover .layer {
-    background-color: #01589b4f;
+  background-color: #01589b4f;
 }
 
 .switch:hover .checkbox:checked ~ .layer {
-    background-color: #01589bcc;
+  background-color: #01589bcc;
 }
 
 .switch .checkbox:checked + .knobs:before {
-    color: #01579b;
-    left: 42px;
-    background-color:white;
+  color:  rgb(0, 54, 105);
+  left: 42px;
+  background-color:white;
 }
 
 .switch .checkbox:checked ~ .layer {
-    background-color:#01579b;
+  background-color: rgb(0, 54, 105);
 }
 
 .switch .knobs, .switch .knobs:before, .switch .layer {
-    transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
-.switch.ftOrPt .knobs:before{
-    content: 'FT';
+.switch.scheduleSelector .knobs:before{
+  content: 'FT';
 }
 
-.switch.ftOrPt .checkbox:checked + .knobs:before {
-    content: 'PT';
+.switch.scheduleSelector .checkbox:checked + .knobs:before {
+  content: 'PT';
 }
 
-.switch.dayOrNite .knobs:before{
-    content: 'Day';
+.switch.shiftSelector .knobs:before{
+  content: 'Day';
 }
 
-.switch.dayOrNite .checkbox:checked + .knobs:before {
-    content: 'Nite';
+.switch.shiftSelector .checkbox:checked + .knobs:before {
+  content: 'Nite';
 }
 
-.switch.basicOrAdv .knobs:before{
-    content: 'Bsc.';
+.switch.advancedOptions .knobs:before{
+  content: 'Bsc.';
 }
 
-.switch.basicOrAdv .checkbox:checked + .knobs:before {
-    content: 'Adv.';
+.switch.advancedOptions .checkbox:checked + .knobs:before {
+  content: 'Adv.';
 }
 
-.week-container {
-    height: 90%;
-    width:100%;
-    padding: 2em 0em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: #01579b;
+/* Styling form for calculators */
+.container.week {
+  display: flex;
 }
 
-.weekcolumn {
-    position: relative;
-    width:48%;
+.weekcol {
+  width:48%;
+  margin: 0 auto;
 }
 
-.weekcolumn h2 {
-    font-size: 1.8rem;
-    text-align: center; 
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.display-none {
+  display: none;
 }
 
 .form-input { 
-    position:relative; 
-    margin: 3vh;
-}
-
-.form-input.payperiodTotal {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.hide {
-    display: none;
+  position:relative; 
+  margin: 2.2rem
 }
 
 input {
-    background-color:inherit;
-    text-align: center;
-    position: relative;
-    font-size:1.2rem;
-    display:block;
-    width: 100%;
-    border:none;
-    border-bottom:1px solid #757575;
-    color: inherit;
+  position: relative;
+  display:block;
+  width: 100%;
+  border:none;
+  border-bottom:1px solid #757575;
+  background-color:inherit;
+  color: inherit;
+  text-align: center;
+  font-size:1.2rem;
+
 }
 
 input:focus {
-    outline:none;
+  outline:none;
 }
-  
-/* LABEL ======================================= */
 
-label          {
-    color:#999; 
-    text-align: center;
-    font-size:1rem;
-    font-weight:normal;
-    position:absolute;
-    padding: .25em 0em 0em 0em;
-    pointer-events:none;
-    top:0px;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+/* Animations for the labels on form inputs */
+
+label {
+  position:absolute;
+  left:0.3125rem;
+  top:0px;
+  color:#999; 
+  font-size:1rem;
+  font-weight:normal;
+  pointer-events:none;
+  transition:0.15s ease-in-out; 
+  -moz-transition:0.15s ease-in-out; 
+  -webkit-transition:0.15s ease-in-out;
 }
-  
-/* active state */
+
 input:focus ~ label,
 input:hover ~ label, 
 input:valid ~ label,
 input:not(:placeholder-shown) ~ label {
-    top:-15px;
-    left:5px;
-    font-size:0.5rem;
-    color: #01579b;
+  top:-1.25rem;
+  left:0.3125rem;
+  font-size:0.5rem;
+  color: #01579b;
 }
-  
-/* BOTTOM BARS ================================= */
+
+label span {
+  color:red;
+}
+
+input:valid ~ label span {
+  display: none;
+}
+
+/* Bottom bars for the form inputs*/
 .bar { 
-    position:relative; 
-    display:block; 
-    width: 100%; 
+  position:relative; 
+  display:block; 
+  width: 101%; 
 }
 
 .bar:before, .bar:after {
-    content:'';
-    height:2px; 
-    width:0;
-    bottom:1px; 
-    position:absolute;
-    background: #01579b; 
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background: #01579b; 
+  transition:0.2s ease-in-out; 
+  -moz-transition:0.2s ease-in-out; 
+  -webkit-transition:0.2s ease-in-out;
 }
-  
+
 .bar:before {
-    left:50%;
+  left:50%;
 }
-  
+
 .bar:after {
-    right:50%; 
+  right:50%; 
 }
-  
-/* active state */
+
+/* Active state For inputs */
 input:focus ~ .bar:before, 
 input:focus ~ .bar:after {
-    width:50%;
+  width:50%;
 }
-  
-/* HIGHLIGHTER ================================== */
+
+/* Highlighter animation for the form inputs */
 .highlight {
-    position: absolute;
-    top: -50%; 
-    height: 150%; 
-    width: 100%; 
-    pointer-events: none;
-    opacity: 0.45;
+  position: absolute;
+  top: -80%; 
+  height: 175%; 
+  width: 100%; 
+  pointer-events: none;
 }
 
 input:hover ~ .highlight {
-    -webkit-animation:inputHighlighter .5s ease;
-    -moz-animation:inputHighlighter .5s ease;
-    animation:inputHighlighter .5s ease;
+  -webkit-animation:inputHighlighter .5s ease-in-out;
+  -moz-animation:inputHighlighter .5s ease-in-out;
+  animation:inputHighlighter .5s ease;
 } 
- 
-.bold-label {
-    font-weight: bold;
-    color: #01579b;
-}
 
-/* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-    from { background: #01589b25; }
-    to  { width:0; background:transparent; }
+  from { background: #01589b25; }
+  to  { width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-    from { background: #01589b25; }
-    to  { width:0; background:transparent; }
+  from { background: #01589b25; }
+  to  { width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-    from { background:#01589b25; }
-    to  { width:0; background:transparent; }
+  from { background:#01589b25; }
+  to  { width:0; background:transparent; }
 }
 
+/* styling for buttons associated with the calculator forms */
 .calc-button {
-    position: relative;
-    top: 75%;
-    display: block;
-    height: 3em;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    border-width: 0;
-    outline: none;
-    border-radius: 4px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, .6);
-    background-color:#01579b;
-    color: #ecf0f1;
-    transition: background-color .3s;
+  position: relative;
+  display: block;
+  height: 3em;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .6);
+  background-color:rgb(0, 54, 105);
+  color: #ecf0f1;
+  transition: background-color .3s;
 }
-  
+
 .calc-button:hover, .calc-button:focus {
-    cursor: pointer;
-    background-color: #01589bcb;
-    box-shadow: none;
+  cursor: pointer;
+  background-color: rgb(48, 94, 136);
+  box-shadow: none;
 }
 
 .calc-button > * {
-    position: relative;
+  position: relative;
 }
 
 .calc-button span {
-    padding: 1em 2em;
+  padding: 1rem 2rem;
 }
 
 .calc-button:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 0;
-    padding-top: 0;
-    border-radius: 100%;
-    background-color: rgba(236, 240, 241, .3);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, .3);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 }
 
 .calc-button:active:before {
-    width: 120%;
-    padding-top: 120%;
-    transition: width .1s ease-out, padding-top .1s ease-out;
+  width: 120%;
+  padding-top: 120%;
+  transition: width .1s ease-out, padding-top .1s ease-out;
 }
 
-.commission-table {
-    height: 100%;
-    width: 100%;
-    padding-bottom: 2em;
+/* Styling parameters for tables across the site*/
+.container.table {
+  height: 90%;
 }
 
 table {
-    table-layout: fixed;
-    position: relative;
-    border-collapse: collapse;
-    height: 100%;
-    width: 90%;
-    left: 5%;
-    text-align: center;
+  position: relative;
+  border-collapse: collapse;
+  height: 100%;
+  width: 90%;
+  text-align: center;
 }
 
 th {
-    font-size: 0.5rem;
-    padding: 2.5em .25em 0em .25em;
-}
-
-tr:nth-child(even) {
-    background-color: #01589b25;
+  font-size: 1.3rem;
 }
 
 td {
-    padding: 1em 0.25em;
-    font-size: 0.8rem;
+  font-size: 1.2rem;
+}
+
+td p {
+  display: inline;
+  font-weight: bold;
+}
+
+td ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+td li {
+  text-align: left;
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #01589b25;
 }
 
 table tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 table tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 table tr:nth-child(2) td:first-child {
-    border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 table tr:nth-child(2) td:last-child {
-    border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
-    
-td p {
-    display: inline;
-    font-weight: bold;
+  
+/* Responsive selectors for mobile styling */
+@media screen and (max-width: 600px) {
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  .topnav.toggle {position: fixed;}
+  .topnav.toggle a.icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .topnav.toggle a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+
+  th {
+    width: 20%;
+    font-size: 1rem;
+    padding: 1rem 0.25rem 0rem 0.25rem;
+  }
+  
+  td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
 }
-
-td li {
-    font-size: .6rem;
-}
-
-@media only screen and (min-width: 550px) {
-    /* For desktop: */
-    .tab button {
-        height: 2em;
-        font-size: 2rem;
-    }
-
-    .card {
-        position: relative;
-        flex: 1 0 550px;
-    }
-    
-
-    .form-input { 
-        margin: 2.5vh;
-    }
-
-    input {
-        font-size: 1.50rem;
-    }
-
-    .pure-material-button-contained {
-        left: 45%;
-        transform: translatex(-45%);
-    }
-
-    th {
-        font-size: 1.6rem;
-        vertical-align: bottom;
-        padding: 0.75em .25em 0em .25em;
-    }
-
-    td {
-        padding: .30em 0.25em;
-        font-size: 1.2rem;
-    }
-    
-    td li {
-        text-align: left;
-        font-size: 1rem;
-        padding: .5rem;
-    }
-    
-
-}
-

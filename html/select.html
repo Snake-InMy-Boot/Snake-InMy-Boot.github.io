@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../style.css" rel="stylesheet" />
+    <title>Paycheck Calculator</title>
+</head>
+<body class="select">
+    <header class="header">
+        <nav class="topnav" id="myTopnav">
+            <a href="../index.html"><img src="../img/csllc_logo.png" class="logo" alt="CSLLC"></img></a>
+            <a href="./select.html" class="active">Select</a>
+            <a href="./blitz.html">Blitz</a>
+            <a href="./retention.html">Retention</a>
+            <a href="javascript:void(0);" class="icon" onclick="campainSelector()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <div class="card">
+                <div class="row">
+                    <div class="button r switch scheduleSelector">
+                        <input type="checkbox" id="scheduleSelector" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                    <div class="button r switch 2 shiftSelector">
+                        <input type="checkbox" id="shiftSelector" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                    <div class="button r switch 2 advancedOptions">
+                        <input type="checkbox" id="advancedOptions" class="checkbox">
+                        <span class="knobs"></span>
+                        <span class="layer"></span>
+                    </div>
+                </div>
+                <form class="commission-calc"></form>
+                    <div class="container week">
+                        <div class="og-rate"></div>
+                        <div class="weekcol" id=week1>
+                            <h2>Week 1</h2>
+                            <div class="form-input">
+                                <input type="number" id="units1" autocomplete="off" placeholder=" " required> 
+                                <span class="highlight"></span><span class="bar"></span>  
+                                <label>Units<span> *</span></label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="number" id="select1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Select Units<span> *</span></label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="number" id="apple1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Apple TV<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" step='0.01' id="hours1" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hours<span> *</span></label> 
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="uph1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>           
+                                <label>UPH</label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="text" id="hourlyRate1"  autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="dialPay1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Dial Pay</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="attendanceBonus1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Atten. Bonus</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="commission1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Commission</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="total1" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Total</label>
+                            </div>
+                        </div>    
+                        <div class="weekcol" id=week2>
+                            <h2>Week 2</h2>
+                            <div class="form-input">
+                                <input type="number" id="units2" autocomplete="off" placeholder=" " required> 
+                                <span class="highlight"></span><span class="bar"></span>  
+                                <label>Units<span> *</span></label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="number" id="select2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Select Units<span> *</span></label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="number" id="apple2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Apple TV<span> *</span></label>
+                            </div>
+                            <div class="form-input">
+                                <input type="number" step='0.01' id="hours2" autocomplete="off" placeholder=" " required>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hours<span> *</span></label> 
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="uph2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>           
+                                <label>UPH</label>
+                            </div>
+                            <div class="form-input hide display-none">
+                                <input type="text" id="hourlyRate2"  autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="dialPay2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Dial Pay</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="attendanceBonus2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Atten. Bonus</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="commission2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Commission</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="total2" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Total</label>
+                            </div>
+                        </div>
+                        <div class="row payperiod">    
+                            <div class="form-input">
+                                <input type="text" id="payPeriodTotal" autocomplete="off" placeholder=" " readonly>
+                                <span class="highlight"></span><span class="bar"></span>
+                                <label>Pay Period Total</label>
+                            </div>
+                        </div>
+                        <div class="row buttonpadding">
+                            <button class="calc-button submit" type="button" onclick="calculate()">
+                            <span>Submit</span></button>
+                            <button class="calc-button reset" type="reset">
+                            <span>Reset</span></button>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+            <div class="card">
+                <div class="container table">
+                    <h2>Select Pay Scale and Incentives</h2>
+                    <table id="tableSelect">
+                        <tr><th>% of Goal</th><th>Select UPH</th><th>FT Units per Week</th><th>PT Units per Week</th><th>Amount</th></tr>
+                        <tr><td>100%</td><td>0.25</td><td>10</td><td>5</td><td>$2.65/hour</td></tr>
+                        <tr><td>110%</td><td>0.28</td><td>11</td><td>6</td><td>$2.75/hour</td></tr>
+                        <tr><td>120%</td><td>0.30</td><td>12</td><td>6</td><td>$2.90/hour</td></tr>
+                        <tr><td>130%</td><td>0.33</td><td>13</td><td>7</td><td>$3.00/hour</td></tr>
+                        <tr><td>140%</td><td>0.35</td><td>14</td><td>7</td><td>$3.15/hour</td></tr>
+                        <tr><td>150%</td><td>0.38</td><td>15</td><td>8</td><td>$4.05/hour</td></tr>
+                        <tr><td>160%</td><td>0.40</td><td>16</td><td>8</td><td>$4.50/hour</td></tr>
+                        <tr><td>170%</td><td>0.43</td><td>17</td><td>9</td><td>$5.05/hour</td></tr>
+                        <tr><td>180%</td><td>0.45</td><td>18</td><td>9</td><td>$6.45/hour</td></tr>
+                        <tr><td>190%</td><td>0.48</td><td>19</td><td>10</td><td>$7.70/hour</td></tr>
+                        <tr><td>200%</td><td>0.50</td><td>20</td><td>10</td><td>$8.95/hour</td></tr>
+                        <tr><th colspan="3">Pay Scale</th><th colspan="2">Amount</th></tr>
+                        <tr><td colspan="3">Base Rate</td><td colspan="2">$10.00/Hour</td></tr>              
+                        <tr><td colspan="3">Attendance Bonus</td><td colspan="2">$1.00/Hour</td></tr>
+                        <tr><td colspan="3">Attendance Bonus (FT Nights)</td><td colspan="2">$2.00/Hour</td></tr>
+                        <tr><td colspan="3">Every Unit Over 200%</td><td colspan="2">$5/Unit</td></tr>
+                        <tr><td colspan="3">Apple TV Units</td><td colspan="2">$5/Unit</td></tr>
+                        <tr><td colspan="3">Select Units</td><td colspan="2">$7/Unit</td></tr>
+                        <tr><td colspan="3">Mobile Transfer Sold (1st, 2nd, 3rd+)</td><td colspan="2">$10, $15, $20/Unit</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/select.js"></script>
+</body>
+</html>
