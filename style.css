@@ -61,7 +61,8 @@ body {
   display: none;
 }
 
-section {position: relative;
+section {
+  position: relative;
   top: 5rem;
 }
 
@@ -488,6 +489,7 @@ table {
 }
 
 th {
+  width: 20%;
   font-size: 1.3rem;
 }
 
@@ -530,6 +532,44 @@ table tr:nth-child(2) td:first-child {
 table tr:nth-child(2) td:last-child {
   border-top-right-radius: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+
+section {
+  top: 3rem;
+}
+
+.topnav a {
+  font-size: 1.5rem;
+}
+
+.topnav img {
+  position: relative;
+  top: .5rem;
+  height:1.7rem;
+}
+  
+.landing-page h1 {
+  margin: 6rem 0rem 0rem 0;
+  font-size: 4rem;
+}
+
+.landing-page h2 {
+  margin: 0rem 0rem 0rem 0;
+  font-size: 2.5rem;
+}
+
+th {
+  font-size: 1.2rem;
+  padding: 1rem 0.25rem 0rem 0.25rem;
+}
+
+td {
+  padding: .25;
+  font-size: 1rem;
+}
+
+}
   
 /* Responsive selectors for mobile styling */
 @media screen and (max-width: 600px) {
@@ -552,17 +592,35 @@ table tr:nth-child(2) td:last-child {
     display: block;
     text-align: left;
   }
-  
 
-  th {
-    width: 20%;
-    font-size: 1rem;
-    padding: 1rem 0.25rem 0rem 0.25rem;
+  .landing-page h1 {
+    margin: 4rem 0rem 0rem 0;
+    font-size: 2rem;
   }
   
-  td {
-    padding: 0.5rem 0.5rem;
+  .landing-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .landing-page h3 {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .landing-page li {
+    padding: 0 1rem;
     font-size: 0.8rem;
   }
   
+  a svg {
+    margin: 0rem 2.8rem 0 2.8rem;
+    padding:0;
+    width: 2rem;
+    fill: rgb(0, 54, 105);
+  }
+  
+  a svg:hover {
+    fill: rgb(61, 115, 165);
+    transform: scale(1.1);
+  }
 }
