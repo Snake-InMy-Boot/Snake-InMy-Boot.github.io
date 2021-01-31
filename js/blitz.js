@@ -1,3 +1,15 @@
+//responsive logo
+let resize = document.querySelector(".logo");
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth < 400) {
+    resize.classList.add("resize");
+  } else {
+    resize.classList.remove("resize");
+  }
+});
+
+// Responsive nav bar menu
 function campainSelector() {
     let x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -7,45 +19,24 @@ function campainSelector() {
     }
   }
 
-// function that allows class to be added
-function addClass(elements, myClass) {
-  if (!elements) {return;}
-  if (typeof(elements) === "string") {
-    elements = document.querySelectorAll(elements);
-  }
-  else if (elements.tagName) { elements=[elements]; }
-  for (let i = 0; i < elements.length; i ++) {
-    if ((" "+elements[i].className+" ").indexOf(" "+myClass+" ") < 0) {
-      elements[i].className += " " + myClass;
-    }
-  }
-}
-
-// function that allows class to be removed
-function removeClass(elements, myClass) {
-  if (!elements) {return;}
-  if (typeof(elements) === "string") {
-    elements = document.querySelectorAll(elements);
-  }
-  else if (elements.tagName) { elements=[elements]; }
-  
-  let reg = new RegExp("(^| )" + myClass + "($| )","g");
-
-  for (let i = 0; i < elements.length; i ++) {
-    elements[i].className = elements[i].className.replace(reg," ");
-  }
-}
-
 // Advanced options switch that will show hidden form inputs when toggled
 const checkbox = document.getElementById("advancedOptions");
+const hide = document.querySelectorAll(".hide");
 
 checkbox.addEventListener("change", function() {
   if (this.checked) {
-    removeClass(document.querySelectorAll(".hide"), "display-none");
+    for (var i = 0; i < hide.length; i++) {
+      hide[i].classList.remove("display-none");
+    }
   } else {
-    addClass(document.querySelectorAll(".hide"), "display-none");
+    for (var i = 0; i < hide.length; i++) {
+      hide[i].classList.add("display-none");
+    }
   }
 });
+
+
+console.log(hide)
 
 //  formatter for numbers that should be displayed as currency
 let formatter = new Intl.NumberFormat('en-US', {

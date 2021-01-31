@@ -1,19 +1,3 @@
-/* 
-Saving this theme selector
-
-:root { 
-  --default_bg: rgb(0, 54, 105);
-  --default_lt: white;
-  --default_dt: black;
-  --select_bg: rgb(223, 219, 0);
-  --select_lt: white;
-  --select_dt: black;
-  --blitz_bg: rgb(185, 0, 0);
-  --retention_bg: rgb(175, 0, 175);
-  --retention_lt: white;
-  --retention_dt: black;
-} */
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -32,6 +16,7 @@ body {
 .topnav img {
   position: relative;
   top: .5rem;
+  padding: 0rem .3rem;
   height: 2.2rem;
 }
 
@@ -58,6 +43,10 @@ body {
 }
 
 .topnav .icon {
+  display: none;
+}
+
+.resize {
   display: none;
 }
 
@@ -298,7 +287,9 @@ a svg:hover {
 }
 
 h2 {
+  font-size: 2rem;
   margin: 0;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -622,5 +613,116 @@ td {
   a svg:hover {
     fill: rgb(61, 115, 165);
     transform: scale(1.1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-bg: #292929;
+    --dark-bg: #1b1b1b;
+    --light-text: white;
+    --dark-text: rgb(196, 196, 196);
+    --light-hover: rgba(255, 255, 255, 0.10);
+  }
+
+  body {
+    color: var(--dark-text);
+    background: var(--light-bg);
+  }
+
+  .topnav {
+    background: var(--dark-bg);
+  }
+
+
+  .card {
+    color: var(--dark-text);
+    background: var(--dark-bg);
+  }
+
+  .container h1, 
+  .container h3 {
+    color: var(--light-text);
+    font-weight: bold;
+  }
+  
+  .container h2,
+  .container li, 
+  .container table,
+  .container input {
+    color: var(--dark-text);
+  }
+
+  a svg {
+    fill: var(--dark-text);
+  }
+  
+  a svg:hover {
+    fill: var(--light-text);
+  }
+
+  .layer {
+    background-color: var(--light-bg);
+  }
+
+  .switch .knobs:before {
+    color: var(--light-bg);
+    background-color:var(--dark-text)
+  }
+  
+  .switch:hover .layer {
+    background-color:var(--light-hover);
+  }
+  
+  .switch:hover .checkbox:checked ~ .layer {
+    background-color: var(--light-hover);
+  }
+  
+  .switch .checkbox:checked + .knobs:before {
+    color: var(--light-bg);
+    background-color:var(--dark-text)
+  }
+  
+  .switch .checkbox:checked ~ .layer {
+    background-color: rgb(12, 12, 12);
+  }
+
+  .calc-button {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+
+  }
+  
+  .calc-button:hover, .calc-button:focus {
+    background-color: var(--light-hover);
+  }
+
+  input:focus ~ label,
+  input:hover ~ label, 
+  input:valid ~ label,
+  input:not(:placeholder-shown) ~ label {
+  color: var(--light-text);
+}
+
+
+.bar:before, .bar:after {
+  background: var(--dark-text); 
+}
+
+@-webkit-keyframes inputHighlighter {
+  from { background:var(--light-bg); }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background: var(--light-bg);  }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:var(--light-bg);  }
+  to  { width:0; background:transparent; }
+}
+  
+  table tr:nth-child(even) {
+    background-color: var(--light-bg);
   }
 }
