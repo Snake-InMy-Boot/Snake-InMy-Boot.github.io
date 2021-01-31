@@ -2,7 +2,7 @@
 let resize = document.querySelector(".logo");
 
 window.addEventListener("resize", function() {
-  if (window.innerWidth < 400) {
+  if (window.innerWidth < 450) {
     resize.classList.add("resize");
   } else {
     resize.classList.remove("resize");
@@ -63,8 +63,6 @@ function week1() {
   let commission = input[10];
   let total = input[11];
   let scheduled = null;
-
-
 
   if (hours !== undefined) {
     dialPay.value = hours * 11.00;

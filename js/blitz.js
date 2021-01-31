@@ -2,7 +2,7 @@
 let resize = document.querySelector(".logo");
 
 window.addEventListener("resize", function() {
-  if (window.innerWidth < 400) {
+  if (window.innerWidth < 450) {
     resize.classList.add("resize");
   } else {
     resize.classList.remove("resize");
@@ -34,7 +34,6 @@ checkbox.addEventListener("change", function() {
     }
   }
 });
-
 
 console.log(hide)
 

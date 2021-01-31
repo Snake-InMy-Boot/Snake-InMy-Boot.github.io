@@ -2,7 +2,7 @@
 let resize = document.querySelector(".logo");
 
 window.addEventListener("resize", function() {
-  if (window.innerWidth < 400) {
+  if (window.innerWidth < 450) {
     resize.classList.add("resize");
   } else {
     resize.classList.remove("resize");
@@ -47,8 +47,6 @@ function calculate() {
   week2();
   total();
 }
-
-
 
 function week1() {
 const scheduleSelector = document.getElementById("scheduleSelector");

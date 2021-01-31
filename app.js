@@ -1,8 +1,12 @@
+//responsive logo
 let resize = document.querySelector(".logo");
 
 window.addEventListener("resize", function() {
-  if (window.innerWidth < 400) resize.classList.add("resize");
-  if (window.innerWidth > 400) resize.classList.remove("resize");
+  if (window.innerWidth < 450) {
+    resize.classList.add("resize");
+  } else {
+    resize.classList.remove("resize");
+  }
 });
 
 function campainSelector() {
