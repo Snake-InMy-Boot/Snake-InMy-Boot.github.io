@@ -10,14 +10,14 @@ window.addEventListener("resize", function() {
 });
 
 // Responsive nav bar menu
-function campainSelector() {
-    let x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " toggle";
-    } else {
-      x.className = "topnav";
-    }
+function campaignSelector() {
+  let nav = document.getElementById("myTopnav");
+  if (nav.className === "topnav") {
+    nav.className += " toggle";
+  } else {
+    nav.className = "topnav";
   }
+}
 
 // Advanced options switch that will show hidden form inputs when toggled
 const checkbox = document.getElementById("advancedOptions");

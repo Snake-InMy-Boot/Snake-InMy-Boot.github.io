@@ -9,12 +9,12 @@ window.addEventListener("resize", function() {
   }
 });
 
-function campainSelector() {
-    let x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " toggle";
+function campaignSelector() {
+    let nav = document.getElementById("myTopnav");
+    if (nav.className === "topnav") {
+      nav.className += " toggle";
     } else {
-      x.className = "topnav";
+      nav.className = "topnav";
     }
   }
 
