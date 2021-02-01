@@ -1,3 +1,11 @@
+:root {
+  --light-bg: #292929;
+  --dark-bg: #1b1b1b;
+  --light-text: white;
+  --dark-text: whitesmoke;
+  --light-hover: rgba(255, 255, 255, 0.10);
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -34,7 +42,7 @@ body {
   font-size: 2rem;
 }
 
-.topnav a:hover {
+.topnav a:hover:not(:last-child) {
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
 }
@@ -47,6 +55,30 @@ body {
 
 .topnav .icon {
   display: none;
+}
+
+.themeButton {
+  all: unset;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  border: solid 2px whitesmoke;
+  background-color:whitesmoke;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.themeButton:hover {
+  background-color: transparent;
+}
+
+.themeButton.dark-theme{
+  border-color: whitesmoke;
+  background-color: transparent;
+}
+
+.themeButton.dark-theme:hover {
+  background-color: whitesmoke;
 }
 
 .resize {
@@ -81,6 +113,7 @@ section {
   position: absolute;
   top: 5rem;
   height: 70vh;
+  width: 70vw;
 }
 
 .landing-page {
@@ -560,7 +593,8 @@ td {
 @media screen and (max-width: 600px) {
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
   .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
+  .topnav a.icon,
+  .topnav a.theme-btn {
     float: right;
     display: block;
   }
@@ -572,10 +606,33 @@ td {
     right: 0;
     top: 0;
   }
+
+  .topnav a.theme-btn {
+    position: fixed;
+    right: 6rem;
+    top: 0;
+  }
+
+  .topnav a.icon:hover,
+  .topnav a.theme-btn:hover {
+    background-color: transparent;
+  }
+
   .topnav.toggle a {
     float: none;
     display: block;
     text-align: left;
+  }
+
+  .themeButton {
+    right: 8rem;
+  }
+
+  .card.fill {
+    position: absolute;
+    top: 1rem;
+    height: 80vh;
+    width: 93vw;
   }
 
   .landing-page h1 {
@@ -618,113 +675,109 @@ td {
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --light-bg: #292929;
-    --dark-bg: #1b1b1b;
-    --light-text: white;
-    --dark-text: rgb(196, 196, 196);
-    --light-hover: rgba(255, 255, 255, 0.10);
-  }
+body.dark-theme {
+  color: var(--dark-text);
+  background: var(--light-bg);
+}
 
-  body {
-    color: var(--dark-text);
-    background: var(--light-bg);
-  }
-
-  .topnav {
-    background: var(--dark-bg);
-  }
+body.dark-theme .topnav {
+  background: var(--dark-bg);
+}
 
 
-  .card {
-    color: var(--dark-text);
-    background: var(--dark-bg);
-  }
+body.dark-theme .card {
+  color: var(--dark-text);
+  background: var(--dark-bg);
+}
 
-  .container h1, 
-  .container h3 {
-    color: var(--light-text);
-    font-weight: bold;
-  }
-  
-  .container h2,
-  .container li, 
-  .container table,
-  .container input {
-    color: var(--dark-text);
-  }
-
-  a svg {
-    fill: var(--dark-text);
-  }
-  
-  a svg:hover {
-    fill: var(--light-text);
-  }
-
-  .layer {
-    background-color: var(--light-bg);
-  }
-
-  .switch .knobs:before {
-    color: var(--light-bg);
-    background-color:var(--dark-text)
-  }
-  
-  .switch:hover .layer {
-    background-color:var(--light-hover);
-  }
-  
-  .switch:hover .checkbox:checked ~ .layer {
-    background-color: var(--light-hover);
-  }
-  
-  .switch .checkbox:checked + .knobs:before {
-    color: var(--light-bg);
-    background-color:var(--dark-text)
-  }
-  
-  .switch .checkbox:checked ~ .layer {
-    background-color: rgb(12, 12, 12);
-  }
-
-  .calc-button {
-    background-color: var(--light-bg);
-    color: var(--dark-text);
-
-  }
-  
-  .calc-button:hover, .calc-button:focus {
-    background-color: var(--light-hover);
-  }
-
-  input:focus ~ label,
-  input:hover ~ label, 
-  input:valid ~ label,
-  input:not(:placeholder-shown) ~ label {
+body.dark-theme .container h1, 
+body.dark-theme .container h3 {
   color: var(--light-text);
+  font-weight: bold;
+}
+
+body.dark-theme .container h2,
+body.dark-theme .container li, 
+body.dark-theme .container table,
+body.dark-theme .container input {
+  color: var(--dark-text);
+}
+
+body.dark-theme a svg {
+  fill: var(--dark-text);
+}
+
+body.dark-theme a svg:hover {
+  fill: var(--light-text);
+}
+
+body.dark-theme .layer {
+  background-color: var(--light-bg);
+}
+
+body.dark-theme .switch .knobs:before {
+  color: var(--light-bg);
+  background-color:var(--dark-text)
+}
+
+body.dark-theme .switch:hover .layer {
+  background-color:var(--light-hover);
+}
+
+body.dark-theme .switch:hover .checkbox:checked ~ .layer {
+  background-color: var(--light-hover);
+}
+
+body.dark-theme .switch .checkbox:checked + .knobs:before {
+  color: var(--light-bg);
+  background-color:var(--dark-text)
+}
+
+body.dark-theme .switch .checkbox:checked ~ .layer {
+  background-color: rgb(12, 12, 12);
+}
+
+body.dark-theme .calc-button {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+
+}
+
+body.dark-theme .calc-button:hover, .calc-button:focus {
+  background-color: var(--light-hover);
+}
+
+body.dark-theme input:focus ~ label,
+body.dark-theme input:hover ~ label, 
+body.dark-theme input:valid ~ label,
+body.dark-theme input:not(:placeholder-shown) ~ label {
+color: var(--light-text);
 }
 
 
-.bar:before, .bar:after {
-  background: var(--dark-text); 
+body.dark-theme .bar:before, 
+body.dark-theme .bar:after {
+background: var(--dark-text); 
 }
 
-@-webkit-keyframes inputHighlighter {
-  from { background:var(--light-bg); }
-  to  { width:0; background:transparent; }
+body.dark-theme input:hover ~ .highlight {
+  -webkit-animation:darkInputHighlighter .5s ease-in-out;
+  -moz-animation:darkInputHighlighter .5s ease-in-out;
+  animation:darkInputHighlighter .5s ease;
+} 
+@-webkit-keyframes darkInputHighlighter {
+from { background:var(--light-bg); }
+to  { width:0; background:transparent; }
 }
-@-moz-keyframes inputHighlighter {
-  from { background: var(--light-bg);  }
-  to  { width:0; background:transparent; }
+@-moz-keyframes darkInputHighlighter {
+from { background: var(--light-bg);  }
+to  { width:0; background:transparent; }
 }
-@keyframes inputHighlighter {
-  from { background:var(--light-bg);  }
-  to  { width:0; background:transparent; }
+@keyframes darkInputHighlighter {
+from { background:var(--light-bg);  }
+to  { width:0; background:transparent; }
 }
-  
-  table tr:nth-child(even) {
-    background-color: var(--light-bg);
-  }
+
+body.dark-theme table tr:nth-child(even) {
+  background-color: var(--light-bg);
 }
